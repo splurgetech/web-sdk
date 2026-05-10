@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".",
+			"name": "web-sdk"
+		},
+		{
+			"path": "../math-sdk",
+			"name": "math-sdk"
+		}
+	],
+	"settings": {}
+}
