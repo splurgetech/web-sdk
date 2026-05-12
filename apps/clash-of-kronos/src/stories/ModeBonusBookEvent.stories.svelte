@@ -46,26 +46,6 @@
 />
 
 <Story
-	name="setTotalWin"
-	args={templateArgs({
-		skipLoadingScreen: true,
-		data: events.setTotalWin,
-		action: async (data) => await playBookEvent(data, { bookEvents: [] }),
-	})}
-	{template}
-/>
-
-<Story
-	name="freeSpinTrigger"
-	args={templateArgs({
-		skipLoadingScreen: true,
-		data: events.freeSpinTrigger,
-		action: async (data) => await playBookEvent(data, { bookEvents: [] }),
-	})}
-	{template}
-/>
-
-<Story
 	name="updateFreeSpin"
 	args={templateArgs({
 		skipLoadingScreen: true,
@@ -76,10 +56,120 @@
 />
 
 <Story
+	name="cascadeTrackerUpdate"
+	args={templateArgs({
+		skipLoadingScreen: true,
+		data: events.cascadeTrackerUpdate,
+		action: async (data) => await playBookEvent(data, { bookEvents: [] }),
+	})}
+	{template}
+/>
+
+<Story
+	name="chestUnlock"
+	args={templateArgs({
+		skipLoadingScreen: true,
+		data: events.chestUnlock,
+		action: async (data) => await playBookEvent(data, { bookEvents: [] }),
+	})}
+	{template}
+/>
+
+<Story
+	name="chestValuesUpdate"
+	args={templateArgs({
+		skipLoadingScreen: true,
+		data: events.chestValuesUpdate,
+		action: async (data) => await playBookEvent(data, { bookEvents: [] }),
+	})}
+	{template}
+/>
+
+<Story
 	name="winInfo"
 	args={templateArgs({
 		skipLoadingScreen: true,
 		data: events.winInfo,
+		action: async (data) => await playBookEvent(data, { bookEvents: [] }),
+	})}
+	{template}
+/>
+
+<Story
+	name="updateTumbleWin"
+	args={templateArgs({
+		skipLoadingScreen: true,
+		data: events.updateTumbleWin,
+		action: async (data) => await playBookEvent(data, { bookEvents: [] }),
+	})}
+	{template}
+/>
+
+<Story
+	name="tumbleBoard"
+	args={templateArgs({
+		skipLoadingScreen: true,
+		data: events.tumbleBoard,
+		action: async (data) => await playBookEvent(data, { bookEvents: [] }),
+	})}
+	{template}
+/>
+
+<Story
+	name="lightningStrike"
+	args={templateArgs({
+		skipLoadingScreen: true,
+		data: events.lightningStrike,
+		action: async (data) => await playBookEvent(data, { bookEvents: [] }),
+	})}
+	{template}
+/>
+
+<Story
+	name="surgeChests"
+	args={templateArgs({
+		skipLoadingScreen: true,
+		data: events.surgeChests,
+		action: async (data) => await playBookEvent(data, { bookEvents: [] }),
+	})}
+	{template}
+/>
+
+<Story
+	name="hammerCollect"
+	args={templateArgs({
+		skipLoadingScreen: true,
+		data: events.hammerCollect,
+		action: async (data) => await playBookEvent(data, { bookEvents: [] }),
+	})}
+	{template}
+/>
+
+<Story
+	name="hammerSmash"
+	args={templateArgs({
+		skipLoadingScreen: true,
+		data: events.hammerSmash,
+		action: async (data) => await playBookEvent(data, { bookEvents: [] }),
+	})}
+	{template}
+/>
+
+<Story
+	name="freeSpinRetrigger"
+	args={templateArgs({
+		skipLoadingScreen: true,
+		data: events.freeSpinRetrigger,
+		action: async (data) => await playBookEvent(data, { bookEvents: [] }),
+	})}
+	{template}
+/>
+
+<Story
+	name="setTotalWin"
+	args={templateArgs({
+		skipLoadingScreen: true,
+		data: events.setTotalWin,
 		action: async (data) => await playBookEvent(data, { bookEvents: [] }),
 	})}
 	{template}

@@ -4,7 +4,7 @@
 	import { getSymbolInfo } from '../game/utils';
 	import type { SymbolState, RawSymbol } from '../game/types';
 	import { getContext } from '../game/context';
-	import { BitmapText } from 'pixi-svelte';
+	import { BitmapText, Container, Graphics, Text } from 'pixi-svelte';
 
 	type Props = {
 		x?: number;
@@ -19,6 +19,24 @@
 	const context = getContext();
 	const symbolInfo = $derived(getSymbolInfo({ rawSymbol: props.rawSymbol, state: props.state }));
 	const isSprite = $derived(symbolInfo.type === 'sprite');
+	const label = $derived(
+		({
+			RUNE: 'RUNE',
+			SHIELD: 'SHLD',
+			HELMET: 'HELM',
+			EAGLE: 'EAGL',
+			PEGASUS: 'PEGA',
+			KRONOS_SMALL: 'KRON',
+			SCATTER: 'SUN',
+			CHEST: props.rawSymbol.chestActive ? 'CHEST' : 'LOCK',
+			WILD: 'WILD',
+			WILD_LIGHTNING: 'BOLT',
+			WILD_SURGE: 'SURG',
+			WILD_HAMMER: 'HAMR',
+			WILD_EAGLE: 'GOLD',
+		})[props.rawSymbol.name],
+	);
+	const labelColor = $derived(props.rawSymbol.chestActive ? 0xffdd66 : 0xffffff);
 </script>
 
 {#if isSprite}
@@ -41,6 +59,29 @@
 	/>
 {/if}
 
+{#if label}
+	<Container x={props.x} y={props.y}>
+		<Graphics
+			draw={(graphics) => {
+				graphics.roundRect(-48, 24, 96, 24, 5);
+				graphics.fill({ color: props.rawSymbol.chestActive ? 0x5f3a10 : 0x111827, alpha: 0.82 });
+				graphics.stroke({ width: 1, color: props.rawSymbol.chestActive ? 0xffd166 : 0x9ca3af });
+			}}
+		/>
+		<Text
+			anchor={0.5}
+			y={36}
+			text={label}
+			style={{
+				fontFamily: 'Arial',
+				fontSize: 13,
+				fontWeight: '700',
+				fill: labelColor,
+			}}
+		/>
+	</Container>
+{/if}
+
 {#if props.rawSymbol.multiplier}
 	<BitmapText
 		anchor={0.5}
@@ -50,6 +91,19 @@
 		style={{
 			fontFamily: 'gold',
 			fontSize: 50,
+		}}
+	/>
+{/if}
+
+{#if props.rawSymbol.name === 'CHEST' && props.rawSymbol.chestValue}
+	<BitmapText
+		anchor={0.5}
+		x={props.x}
+		y={(props.y ?? 0) - 10}
+		text={`${props.rawSymbol.chestValue}`}
+		style={{
+			fontFamily: 'gold',
+			fontSize: 34,
 		}}
 	/>
 {/if}

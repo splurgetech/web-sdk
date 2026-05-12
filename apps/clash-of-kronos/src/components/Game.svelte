@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-
 	import { EnablePixiExtension } from 'components-pixi';
 	import { EnableHotkey } from 'components-shared';
 	import { MainContainer } from 'components-layout';
@@ -19,6 +17,9 @@
 	import LoadingScreen from './LoadingScreen.svelte';
 	import BoardFrame from './BoardFrame.svelte';
 	import Board from './Board.svelte';
+	import TumbleBoard from './TumbleBoard.svelte';
+	import CascadeTracker from './CascadeTracker.svelte';
+	import PowerUpOverlay from './PowerUpOverlay.svelte';
 	import Anticipations from './Anticipations.svelte';
 	import Win from './Win.svelte';
 	import FreeSpinIntro from './FreeSpinIntro.svelte';
@@ -27,9 +28,16 @@
 	import Transition from './Transition.svelte';
 	import I18nTest from './I18nTest.svelte';
 
+	type Props = {
+		skipLoadingScreen?: boolean;
+	};
+
+	const props: Props = $props();
 	const context = getContext();
 
-	onMount(() => (context.stateLayout.showLoadingScreen = true));
+	$effect(() => {
+		if (props.skipLoadingScreen) context.stateLayout.showLoadingScreen = false;
+	});
 
 	context.eventEmitter.subscribeOnMount({
 		buyBonusConfirm: () => {
@@ -63,12 +71,15 @@
 
 		<MainContainer>
 			<Board />
+			<TumbleBoard />
+			<CascadeTracker />
+			<PowerUpOverlay />
 			<Anticipations />
 		</MainContainer>
 
 		<UI>
 			{#snippet gameName()}
-				<UiGameName name="LINES GAME" />
+				<UiGameName name="CLASH OF KRONOS" />
 			{/snippet}
 			{#snippet logo()}
 				<Text

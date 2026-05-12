@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 import type { RawSymbol, SymbolState } from './types';
 
 export const SYMBOL_SIZE = 120;
@@ -10,87 +8,90 @@ export const REEL_PADDING = 0.53;
 export const INITIAL_BOARD: RawSymbol[][] = [
 	[
 		{
-			name: 'L2',
+			name: 'HELMET',
 		},
 		{
-			name: 'L1',
+			name: 'RUNE',
 		},
 		{
-			name: 'L4',
+			name: 'SHIELD',
 		},
 		{
-			name: 'H2',
+			name: 'CHEST',
+			chestActive: false,
+			underlyingSymbol: 'RUNE',
 		},
 		{
-			name: 'L1',
-		},
-	],
-	[
-		{
-			name: 'H1',
-		},
-		{
-			name: 'L5',
-		},
-		{
-			name: 'L2',
-		},
-		{
-			name: 'H3',
-		},
-		{
-			name: 'L4',
+			name: 'EAGLE',
 		},
 	],
 	[
 		{
-			name: 'L3',
+			name: 'SHIELD',
 		},
 		{
-			name: 'L5',
+			name: 'KRONOS_SMALL',
 		},
 		{
-			name: 'L3',
+			name: 'HELMET',
 		},
 		{
-			name: 'H4',
-		},
-		{
-			name: 'L4',
+			name: 'PEGASUS',
 		},
 	],
 	[
 		{
-			name: 'H4',
+			name: 'PEGASUS',
 		},
 		{
-			name: 'H3',
+			name: 'HELMET',
 		},
 		{
-			name: 'L4',
+			name: 'CHEST',
+			chestActive: false,
+			underlyingSymbol: 'RUNE',
 		},
 		{
-			name: 'L5',
+			name: 'EAGLE',
 		},
 		{
-			name: 'L1',
+			name: 'HELMET',
 		},
 	],
 	[
 		{
-			name: 'H3',
+			name: 'EAGLE',
 		},
 		{
-			name: 'L3',
+			name: 'HELMET',
 		},
 		{
-			name: 'L3',
+			name: 'PEGASUS',
 		},
 		{
-			name: 'H1',
+			name: 'RUNE',
 		},
 		{
-			name: 'H1',
+			name: 'SHIELD',
+		},
+	],
+	[
+		{
+			name: 'KRONOS_SMALL',
+		},
+		{
+			name: 'SHIELD',
+		},
+		{
+			name: 'CHEST',
+			chestActive: false,
+			underlyingSymbol: 'RUNE',
+		},
+		{
+			name: 'HELMET',
+		},
+		{
+			name: 'HELMET',
 		},
 	],
 ];
@@ -121,7 +122,33 @@ export const PORTRAIT_MAIN_SIZES = {
 	height: PORTRAIT_HEIGHT,
 };
 
-export const HIGH_SYMBOLS = ['H1', 'H2', 'H3', 'H4', 'H5'];
+export const HIGH_SYMBOLS = ['EAGLE', 'PEGASUS', 'KRONOS_SMALL'];
+
+export const CASCADE_TRACKER_STAGE_TEXT = {
+	basegame: ['-', '-', '-', 'CHEST', '2X', '3X', '5X'],
+	freegame: ['-', '-', 'CHEST', '2X', '3X', '5X', '10X'],
+} as const;
+
+export const CASCADE_TRACKER_MULTIPLIERS = {
+	basegame: [1, 1, 1, 1, 2, 3, 5],
+	freegame: [1, 1, 1, 2, 3, 5, 10],
+} as const;
+
+export const getCascadeTrackerMultiplier = ({
+	gameType,
+	stage,
+}: {
+	gameType: keyof typeof CASCADE_TRACKER_MULTIPLIERS;
+	stage: number;
+}) => CASCADE_TRACKER_MULTIPLIERS[gameType][stage - 1] ?? 1;
+
+export const getCascadeTrackerChestsActive = ({
+	gameType,
+	stage,
+}: {
+	gameType: keyof typeof CASCADE_TRACKER_MULTIPLIERS;
+	stage: number;
+}) => stage >= (gameType === 'freegame' ? 3 : 4);
 
 export const INITIAL_SYMBOL_STATE: SymbolState = 'static';
 
@@ -355,6 +382,184 @@ export const SYMBOL_INFO_MAP = {
 			assetKey: 'S',
 			animationName: 'scatter_land',
 			sizeRatios: sSizeRatios,
+		},
+	},
+	RUNE: {
+		explosion,
+		win: {
+			type: 'spine',
+			assetKey: 'L1',
+			animationName: 'l1',
+			sizeRatios: { width: 0.5 * 0.75, height: LOW_SYMBOL_SIZE * 0.65 },
+		},
+		postWinStatic: l1Static,
+		static: l1Static,
+		spin: l1Static,
+		land: l1Static,
+	},
+	SHIELD: {
+		explosion,
+		win: {
+			type: 'spine',
+			assetKey: 'L2',
+			animationName: 'l2',
+			sizeRatios: { width: 0.5 * 0.75, height: LOW_SYMBOL_SIZE * 0.65 },
+		},
+		postWinStatic: l2Static,
+		static: l2Static,
+		spin: l2Static,
+		land: l2Static,
+	},
+	HELMET: {
+		explosion,
+		win: {
+			type: 'spine',
+			assetKey: 'L3',
+			animationName: 'l3',
+			sizeRatios: { width: 0.5 * 0.75, height: LOW_SYMBOL_SIZE * 0.63 },
+		},
+		postWinStatic: l3Static,
+		static: l3Static,
+		spin: l3Static,
+		land: l3Static,
+	},
+	EAGLE: {
+		explosion,
+		win: {
+			type: 'spine',
+			assetKey: 'H3',
+			animationName: 'h3',
+			sizeRatios: { width: 0.5 * 0.9, height: HIGH_SYMBOL_SIZE * 0.53 },
+		},
+		postWinStatic: h3Static,
+		static: h3Static,
+		spin: h3Static,
+		land: h3Static,
+	},
+	PEGASUS: {
+		explosion,
+		win: {
+			type: 'spine',
+			assetKey: 'H2',
+			animationName: 'h2',
+			sizeRatios: { width: 0.5, height: HIGH_SYMBOL_SIZE * 0.57 },
+		},
+		postWinStatic: h2Static,
+		static: h2Static,
+		spin: h2Static,
+		land: h2Static,
+	},
+	KRONOS_SMALL: {
+		explosion,
+		win: {
+			type: 'spine',
+			assetKey: 'H1',
+			animationName: 'h1',
+			sizeRatios: { width: 0.5 * 1.15, height: HIGH_SYMBOL_SIZE * 0.57 },
+		},
+		postWinStatic: h1Static,
+		static: h1Static,
+		spin: h1Static,
+		land: h1Static,
+	},
+	SCATTER: {
+		explosion,
+		postWinStatic: sStatic,
+		static: sStatic,
+		spin: {
+			type: 'spine',
+			assetKey: 'S',
+			animationName: 'scatter_spin',
+			sizeRatios: sSizeRatios,
+		},
+		win: { type: 'spine', assetKey: 'S', animationName: 'scatter_win', sizeRatios: sSizeRatios },
+		land: {
+			type: 'spine',
+			assetKey: 'S',
+			animationName: 'scatter_land',
+			sizeRatios: sSizeRatios,
+		},
+	},
+	CHEST: {
+		explosion,
+		win: {
+			type: 'spine',
+			assetKey: 'M',
+			animationName: 'low_multiplier_pay',
+			sizeRatios: { width: 0.3, height: 0.3 },
+		},
+		postWinStatic: l5Static,
+		static: l5Static,
+		spin: l5Static,
+		land: l5Static,
+	},
+	WILD: {
+		explosion,
+		postWinStatic: {
+			type: 'sprite',
+			assetKey: 'explodedW.png',
+			sizeRatios: { width: 0.85, height: 0.85 },
+		},
+		static: wStatic,
+		spin: wStatic,
+		win: { type: 'spine', assetKey: 'W', animationName: 'wild_dynamite', sizeRatios: wSizeRatios },
+		land: {
+			type: 'spine',
+			assetKey: 'W',
+			animationName: 'wild_dynamite_land',
+			sizeRatios: wSizeRatios,
+		},
+	},
+	WILD_LIGHTNING: {
+		explosion,
+		postWinStatic: wStatic,
+		static: wStatic,
+		spin: wStatic,
+		win: { type: 'spine', assetKey: 'W', animationName: 'wild_dynamite', sizeRatios: wSizeRatios },
+		land: {
+			type: 'spine',
+			assetKey: 'W',
+			animationName: 'wild_dynamite_land',
+			sizeRatios: wSizeRatios,
+		},
+	},
+	WILD_SURGE: {
+		explosion,
+		postWinStatic: wStatic,
+		static: wStatic,
+		spin: wStatic,
+		win: { type: 'spine', assetKey: 'W', animationName: 'wild_dynamite', sizeRatios: wSizeRatios },
+		land: {
+			type: 'spine',
+			assetKey: 'W',
+			animationName: 'wild_dynamite_land',
+			sizeRatios: wSizeRatios,
+		},
+	},
+	WILD_HAMMER: {
+		explosion,
+		postWinStatic: wStatic,
+		static: wStatic,
+		spin: wStatic,
+		win: { type: 'spine', assetKey: 'W', animationName: 'wild_dynamite', sizeRatios: wSizeRatios },
+		land: {
+			type: 'spine',
+			assetKey: 'W',
+			animationName: 'wild_dynamite_land',
+			sizeRatios: wSizeRatios,
+		},
+	},
+	WILD_EAGLE: {
+		explosion,
+		postWinStatic: wStatic,
+		static: wStatic,
+		spin: wStatic,
+		win: { type: 'spine', assetKey: 'W', animationName: 'wild_dynamite', sizeRatios: wSizeRatios },
+		land: {
+			type: 'spine',
+			assetKey: 'W',
+			animationName: 'wild_dynamite_land',
+			sizeRatios: wSizeRatios,
 		},
 	},
 } as const;

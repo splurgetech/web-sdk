@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import { stateBet } from 'state-shared';
 import { createPlayBookUtils } from 'utils-book';
 import { createGetEmptyPaddedBoard } from 'utils-slots';
@@ -20,7 +19,7 @@ export const playBet = async (bet: Bet) => {
 
 // resume bet
 const BOOK_EVENT_TYPES_TO_RESERVE_FOR_SNAPSHOT = [
-	'updateGlobalMult',
+	'cascadeTrackerUpdate',
 	'freeSpinTrigger',
 	'updateFreeSpin',
 	'setTotalWin',
@@ -52,6 +51,8 @@ export const convertTorResumableBet = (betToResume: Bet) => {
 export const getSymbolX = (reelIndex: number) => SYMBOL_SIZE * (reelIndex + REEL_PADDING);
 export const getSymbolY = (symbolIndexOfBoard: number) => (symbolIndexOfBoard + 0.5) * SYMBOL_SIZE;
 
+type SymbolInfoEntry = (typeof SYMBOL_INFO_MAP)[keyof typeof SYMBOL_INFO_MAP];
+
 export const getSymbolInfo = ({
 	rawSymbol,
 	state,
@@ -59,5 +60,14 @@ export const getSymbolInfo = ({
 	rawSymbol: RawSymbol;
 	state: SymbolState;
 }) => {
-	return SYMBOL_INFO_MAP[rawSymbol.name][state];
+	let symbolInfo = SYMBOL_INFO_MAP[rawSymbol.name as keyof typeof SYMBOL_INFO_MAP] as
+		| SymbolInfoEntry
+		| undefined;
+	if (!symbolInfo) {
+		if (import.meta.env.DEV) {
+			console.warn(`[clash-of-kronos] Unknown symbol "${String(rawSymbol.name)}", using RUNE visuals`);
+		}
+		symbolInfo = SYMBOL_INFO_MAP.RUNE;
+	}
+	return symbolInfo[state as keyof typeof symbolInfo] ?? symbolInfo.static;
 };

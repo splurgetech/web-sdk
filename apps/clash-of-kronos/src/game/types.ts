@@ -7,6 +7,9 @@ export type RawSymbol = {
 	multiplier?: number;
 	scatter?: boolean;
 	wild?: boolean;
+	chestValue?: number;
+	chestActive?: boolean;
+	underlyingSymbol?: SymbolName;
 };
 export type BetMode = keyof typeof config.betModes;
 export type GameType = keyof typeof config.paddingReels;
@@ -18,6 +21,9 @@ export const SYMBOL_STATES = [
 	'win',
 	'postWinStatic',
 	'explosion',
+	'powerUp',
+	'locked',
+	'active',
 ] as const;
 
 export type SymbolState = SpinningReelSymbolState | (typeof SYMBOL_STATES)[number];

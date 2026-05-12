@@ -21,7 +21,7 @@ import {
 } from './constants';
 
 const onSymbolLand = ({ rawSymbol }: { rawSymbol: RawSymbol }) => {
-	if (rawSymbol.name === 'S') {
+	if (rawSymbol.name === 'S' || rawSymbol.name === 'SCATTER') {
 		eventEmitter.broadcast({ type: 'soundScatterCounterIncrease' });
 		eventEmitter.broadcast({
 			type: 'soundOnce',
@@ -29,7 +29,14 @@ const onSymbolLand = ({ rawSymbol }: { rawSymbol: RawSymbol }) => {
 		});
 	}
 
-	if (rawSymbol.name === 'W') {
+	if (
+		rawSymbol.name === 'W' ||
+		rawSymbol.name === 'WILD' ||
+		rawSymbol.name === 'WILD_LIGHTNING' ||
+		rawSymbol.name === 'WILD_SURGE' ||
+		rawSymbol.name === 'WILD_HAMMER' ||
+		rawSymbol.name === 'WILD_EAGLE'
+	) {
 		eventEmitter.broadcast({
 			type: 'soundOnce',
 			name: 'sfx_multiplier_landing',
@@ -76,6 +83,23 @@ export const stateGame = $state({
 	board,
 	gameType: 'basegame' as GameType,
 	multiplierBoard: [] as (MultiplierSymbol | undefined)[][],
+	tumbleBoardAdding: [] as {
+		symbolY: Tween<number>;
+		rawSymbol: RawSymbol;
+		symbolState: SymbolState;
+		oncomplete: () => void;
+	}[][],
+	tumbleBoardBase: [] as {
+		symbolY: Tween<number>;
+		rawSymbol: RawSymbol;
+		symbolState: SymbolState;
+		oncomplete: () => void;
+	}[][],
+	cascadeStage: 0,
+	cascadeMultiplier: 1,
+	chestsActive: false,
+	hammerHeld: false,
+	powerUpMessage: '',
 	scatterCounter: 0,
 });
 
@@ -99,6 +123,12 @@ const scatterLandIndex = () => {
 const { enhanceBoard } = createEnhanceBoard();
 const enhancedBoard = enhanceBoard({ board: stateGame.board });
 
+const tumbleBoardCombined = () =>
+	stateGame.tumbleBoardAdding.map((addingReel, reelIndex) => [
+		...addingReel,
+		...(stateGame.tumbleBoardBase[reelIndex] ?? []),
+	]);
+
 export const { getWinLevelDataByWinLevelAlias } = createGetWinLevelDataByWinLevelAlias({
 	winLevelMap,
 });
@@ -109,5 +139,6 @@ export const stateGameDerived = {
 	boardRaw,
 	scatterLandIndex,
 	enhancedBoard,
+	tumbleBoardCombined,
 	getWinLevelDataByWinLevelAlias,
 };

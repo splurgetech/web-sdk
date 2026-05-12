@@ -6,6 +6,9 @@ import type { EmitterEventFreeSpinOutro } from '../components/FreeSpinOutro.svel
 import type { EmitterEventWin } from '../components/Win.svelte';
 import type { EmitterEventSound } from '../components/Sound.svelte';
 import type { EmitterEventTransition } from '../components/Transition.svelte';
+import type { EmitterEventTumbleBoard } from '../components/TumbleBoard.svelte';
+import type { EmitterEventCascadeTracker } from '../components/CascadeTracker.svelte';
+import type { EmitterEventPowerUpOverlay } from '../components/PowerUpOverlay.svelte';
 
 export type EmitterEventGame =
 	| EmitterEventBoard
@@ -15,4 +18,7 @@ export type EmitterEventGame =
 	| EmitterEventFreeSpinCounter
 	| EmitterEventFreeSpinOutro
 	| EmitterEventSound
-	| EmitterEventTransition;
+	| EmitterEventTransition
+	| EmitterEventTumbleBoard
+	| EmitterEventCascadeTracker
+	| EmitterEventPowerUpOverlay;

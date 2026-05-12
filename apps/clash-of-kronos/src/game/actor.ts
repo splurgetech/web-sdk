@@ -4,7 +4,8 @@ import { stateBet } from 'state-shared';
 import { checkIsMultipleRevealEvents } from 'utils-book';
 import { createPrimaryMachines, createIntermediateMachines, createGameActor } from 'utils-xstate';
 
-import type { Bet } from './typesBookEvent';
+import type { Bet, BookEventOfType } from './typesBookEvent';
+import type { RawSymbol } from './types';
 import { stateXstateDerived } from './stateXstate';
 import { playBet, convertTorResumableBet } from './utils';
 import { stateGame, stateGameDerived } from './stateGame.svelte';
@@ -15,7 +16,7 @@ const primaryMachines = createPrimaryMachines<Bet>({
 	onResumeGameInactive: (betToResume) => {
 		const lastRevealEvent = _.findLast(
 			betToResume.state,
-			(bookEvent) => bookEvent?.type === 'reveal',
+			(bookEvent): bookEvent is BookEventOfType<'reveal'> => bookEvent?.type === 'reveal',
 		);
 
 		if (lastRevealEvent) stateGameDerived.enhancedBoard.settle(lastRevealEvent.board);
@@ -24,7 +25,7 @@ const primaryMachines = createPrimaryMachines<Bet>({
 		if ((stateBet.isTurbo && stateXstateDerived.isAutoBetting()) || stateBet.isSpaceHold) return;
 		stateBet.winBookEventAmount = 0;
 		await stateGameDerived.enhancedBoard.preSpin({
-			paddingBoard: config.paddingReels[stateGame.gameType],
+			paddingBoard: config.paddingReels[stateGame.gameType] as RawSymbol[][],
 		});
 	},
 	onNewGameError: () => stateGameDerived.enhancedBoard.settle(),
