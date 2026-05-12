@@ -1,0 +1,628 @@
+{
+  "gameType": "basegame",
+  "events": [
+    {
+      "index": 0,
+      "type": "reveal",
+      "board": [
+        [
+          {
+            "name": "M1"
+          },
+          {
+            "name": "M2"
+          },
+          {
+            "name": "M2"
+          },
+          {
+            "name": "L3"
+          },
+          {
+            "name": "S",
+            "scatter": true
+          },
+          {
+            "name": "L3"
+          },
+          {
+            "name": "L3"
+          },
+          {
+            "name": "H2"
+          },
+          {
+            "name": "L3"
+          }
+        ],
+        [
+          {
+            "name": "L3"
+          },
+          {
+            "name": "L2"
+          },
+          {
+            "name": "L2"
+          },
+          {
+            "name": "L3"
+          },
+          {
+            "name": "L3"
+          },
+          {
+            "name": "M2"
+          },
+          {
+            "name": "L3"
+          },
+          {
+            "name": "L2"
+          },
+          {
+            "name": "H1"
+          }
+        ],
+        [
+          {
+            "name": "L1"
+          },
+          {
+            "name": "S",
+            "scatter": true
+          },
+          {
+            "name": "H2"
+          },
+          {
+            "name": "L2"
+          },
+          {
+            "name": "L3"
+          },
+          {
+            "name": "L2"
+          },
+          {
+            "name": "M1"
+          },
+          {
+            "name": "L2"
+          },
+          {
+            "name": "L2"
+          }
+        ],
+        [
+          {
+            "name": "H1"
+          },
+          {
+            "name": "L1"
+          },
+          {
+            "name": "M2"
+          },
+          {
+            "name": "L2"
+          },
+          {
+            "name": "L3"
+          },
+          {
+            "name": "M1"
+          },
+          {
+            "name": "L1"
+          },
+          {
+            "name": "L3"
+          },
+          {
+            "name": "M1"
+          }
+        ],
+        [
+          {
+            "name": "L1"
+          },
+          {
+            "name": "L3"
+          },
+          {
+            "name": "L3"
+          },
+          {
+            "name": "L2"
+          },
+          {
+            "name": "L2"
+          },
+          {
+            "name": "M1"
+          },
+          {
+            "name": "L2"
+          },
+          {
+            "name": "L3"
+          },
+          {
+            "name": "L3"
+          }
+        ],
+        [
+          {
+            "name": "L3"
+          },
+          {
+            "name": "H1"
+          },
+          {
+            "name": "H1"
+          },
+          {
+            "name": "H1"
+          },
+          {
+            "name": "L3"
+          },
+          {
+            "name": "H2"
+          },
+          {
+            "name": "L1"
+          },
+          {
+            "name": "L1"
+          },
+          {
+            "name": "L2"
+          }
+        ],
+        [
+          {
+            "name": "L3"
+          },
+          {
+            "name": "L3"
+          },
+          {
+            "name": "M1"
+          },
+          {
+            "name": "H2"
+          },
+          {
+            "name": "L3"
+          },
+          {
+            "name": "L1"
+          },
+          {
+            "name": "L3"
+          },
+          {
+            "name": "L1"
+          },
+          {
+            "name": "L2"
+          }
+        ]
+      ],
+      "paddingPositions": [
+        97,
+        8,
+        109,
+        23,
+        50,
+        55,
+        1
+      ],
+      "gameType": "basegame",
+      "anticipation": [
+        0,
+        0,
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "index": 1,
+      "type": "winInfo",
+      "totalWin": 20,
+      "wins": [
+        {
+          "symbol": "L3",
+          "clusterSize": 5,
+          "win": 20,
+          "positions": [
+            {
+              "reel": 0,
+              "row": 3
+            },
+            {
+              "reel": 1,
+              "row": 3
+            },
+            {
+              "reel": 1,
+              "row": 4
+            },
+            {
+              "reel": 2,
+              "row": 4
+            },
+            {
+              "reel": 3,
+              "row": 4
+            }
+          ],
+          "meta": {
+            "globalMult": 1,
+            "clusterMult": 1,
+            "winWithoutMult": 20,
+            "overlay": {
+              "reel": 1,
+              "row": 4
+            }
+          }
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "type": "updateTumbleWin",
+      "amount": 20
+    },
+    {
+      "index": 3,
+      "type": "updateGrid",
+      "gridMultipliers": [
+        [
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "type": "kronosBar",
+      "progress": 5,
+      "filled": false
+    },
+    {
+      "index": 5,
+      "type": "tumbleBoard",
+      "newSymbols": [
+        [
+          {
+            "name": "M2"
+          }
+        ],
+        [
+          {
+            "name": "L1"
+          },
+          {
+            "name": "H2"
+          }
+        ],
+        [
+          {
+            "name": "H1"
+          }
+        ],
+        [
+          {
+            "name": "M2"
+          }
+        ],
+        [],
+        [],
+        []
+      ],
+      "explodingSymbols": [
+        {
+          "reel": 0,
+          "row": 3
+        },
+        {
+          "reel": 1,
+          "row": 3
+        },
+        {
+          "reel": 1,
+          "row": 4
+        },
+        {
+          "reel": 2,
+          "row": 4
+        },
+        {
+          "reel": 3,
+          "row": 4
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "type": "winInfo",
+      "totalWin": 437,
+      "wins": [
+        {
+          "symbol": "L2",
+          "clusterSize": 7,
+          "win": 437,
+          "positions": [
+            {
+              "reel": 1,
+              "row": 3
+            },
+            {
+              "reel": 1,
+              "row": 4
+            },
+            {
+              "reel": 2,
+              "row": 4
+            },
+            {
+              "reel": 3,
+              "row": 4
+            },
+            {
+              "reel": 4,
+              "row": 4
+            },
+            {
+              "reel": 4,
+              "row": 3
+            },
+            {
+              "reel": 2,
+              "row": 5
+            }
+          ],
+          "meta": {
+            "globalMult": 1,
+            "clusterMult": 8,
+            "winWithoutMult": 54,
+            "overlay": {
+              "reel": 2,
+              "row": 4
+            }
+          }
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "type": "updateTumbleWin",
+      "amount": 457
+    },
+    {
+      "index": 8,
+      "type": "updateGrid",
+      "gridMultipliers": [
+        [
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          4,
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          4,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "index": 9,
+      "type": "kronosBar",
+      "progress": 12,
+      "filled": false
+    },
+    {
+      "index": 10,
+      "type": "tumbleBoard",
+      "newSymbols": [
+        [],
+        [
+          {
+            "name": "S",
+            "scatter": true
+          },
+          {
+            "name": "L3"
+          }
+        ],
+        [
+          {
+            "name": "L2"
+          },
+          {
+            "name": "L1"
+          }
+        ],
+        [
+          {
+            "name": "L2"
+          }
+        ],
+        [
+          {
+            "name": "M1"
+          },
+          {
+            "name": "L2"
+          }
+        ],
+        [],
+        []
+      ],
+      "explodingSymbols": [
+        {
+          "reel": 1,
+          "row": 3
+        },
+        {
+          "reel": 1,
+          "row": 4
+        },
+        {
+          "reel": 2,
+          "row": 4
+        },
+        {
+          "reel": 2,
+          "row": 5
+        },
+        {
+          "reel": 3,
+          "row": 4
+        },
+        {
+          "reel": 4,
+          "row": 4
+        },
+        {
+          "reel": 4,
+          "row": 3
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "type": "setWin",
+      "amount": 457,
+      "winLevel": 4
+    },
+    {
+      "index": 12,
+      "type": "setTotalWin",
+      "amount": 457
+    },
+    {
+      "index": 13,
+      "type": "finalWin",
+      "amount": 457
+    }
+  ]
+}

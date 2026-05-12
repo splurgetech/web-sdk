@@ -1,3 +1,16 @@
+/**
+ * Hand-authored reference book — kept for its free-spin sequence only.
+ *
+ * The base-game win shapes here are math-correct (values × 100), but this file
+ * will be superseded once bonus-mode books are auto-generated from math-sdk.
+ * For all base-only stories, prefer the math_fixtures/ JSON files instead.
+ *
+ * Regeneration workflow (future):
+ *   1. Fix the freegame-distribution performance in run_fixtures.py
+ *   2. python run_fixtures.py  (adds bonus books)
+ *   3. python export_storybook_fixtures.py  (adds base_fs.json fixture)
+ *   4. Replace this file with the exported fixture.
+ */
 // 7 reels × 9 rows — index 0 and 8 are padding, visible rows are 1–7.
 // Coordinate convention: board_row 1-7 → gridMultipliers visual_row 0-6 (vrow = board_row - 1).
 

@@ -1,0 +1,245 @@
+{
+  "gameType": "basegame",
+  "events": [
+    {
+      "index": 0,
+      "type": "reveal",
+      "board": [
+        [
+          {
+            "name": "S",
+            "scatter": true
+          },
+          {
+            "name": "L1"
+          },
+          {
+            "name": "L2"
+          },
+          {
+            "name": "H1"
+          },
+          {
+            "name": "L3"
+          },
+          {
+            "name": "L3"
+          },
+          {
+            "name": "L2"
+          },
+          {
+            "name": "L2"
+          },
+          {
+            "name": "L2"
+          }
+        ],
+        [
+          {
+            "name": "H2"
+          },
+          {
+            "name": "L2"
+          },
+          {
+            "name": "L3"
+          },
+          {
+            "name": "L3"
+          },
+          {
+            "name": "L2"
+          },
+          {
+            "name": "M1"
+          },
+          {
+            "name": "L3"
+          },
+          {
+            "name": "L3"
+          },
+          {
+            "name": "L3"
+          }
+        ],
+        [
+          {
+            "name": "L2"
+          },
+          {
+            "name": "L3"
+          },
+          {
+            "name": "M1"
+          },
+          {
+            "name": "M1"
+          },
+          {
+            "name": "L3"
+          },
+          {
+            "name": "L2"
+          },
+          {
+            "name": "L3"
+          },
+          {
+            "name": "L1"
+          },
+          {
+            "name": "L1"
+          }
+        ],
+        [
+          {
+            "name": "L1"
+          },
+          {
+            "name": "L1"
+          },
+          {
+            "name": "H1"
+          },
+          {
+            "name": "L2"
+          },
+          {
+            "name": "L3"
+          },
+          {
+            "name": "L1"
+          },
+          {
+            "name": "L3"
+          },
+          {
+            "name": "H2"
+          },
+          {
+            "name": "M1"
+          }
+        ],
+        [
+          {
+            "name": "L2"
+          },
+          {
+            "name": "L2"
+          },
+          {
+            "name": "L3"
+          },
+          {
+            "name": "L3"
+          },
+          {
+            "name": "L2"
+          },
+          {
+            "name": "L3"
+          },
+          {
+            "name": "M1"
+          },
+          {
+            "name": "L2"
+          },
+          {
+            "name": "L1"
+          }
+        ],
+        [
+          {
+            "name": "S",
+            "scatter": true
+          },
+          {
+            "name": "L3"
+          },
+          {
+            "name": "H2"
+          },
+          {
+            "name": "L3"
+          },
+          {
+            "name": "H2"
+          },
+          {
+            "name": "L2"
+          },
+          {
+            "name": "L1"
+          },
+          {
+            "name": "L2"
+          },
+          {
+            "name": "H1"
+          }
+        ],
+        [
+          {
+            "name": "H2"
+          },
+          {
+            "name": "L3"
+          },
+          {
+            "name": "L1"
+          },
+          {
+            "name": "L3"
+          },
+          {
+            "name": "L1"
+          },
+          {
+            "name": "L2"
+          },
+          {
+            "name": "H1"
+          },
+          {
+            "name": "L2"
+          },
+          {
+            "name": "L2"
+          }
+        ]
+      ],
+      "paddingPositions": [
+        118,
+        25,
+        57,
+        10,
+        42,
+        15,
+        4
+      ],
+      "gameType": "basegame",
+      "anticipation": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "index": 1,
+      "type": "setTotalWin",
+      "amount": 0
+    },
+    {
+      "index": 2,
+      "type": "finalWin",
+      "amount": 0
+    }
+  ]
+}
