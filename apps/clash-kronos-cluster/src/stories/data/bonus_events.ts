@@ -28,7 +28,7 @@ export default {
 					name: 'L3',
 				},
 				{
-					name: 'H3',
+					name: 'M1',
 				},
 			],
 			[
@@ -65,7 +65,7 @@ export default {
 					name: 'L3',
 				},
 				{
-					name: 'H3',
+					name: 'M1',
 				},
 				{
 					name: 'L1',
@@ -74,16 +74,16 @@ export default {
 					name: 'L1',
 				},
 				{
-					name: 'H4',
+					name: 'M2',
 				},
 				{
 					name: 'L2',
 				},
 				{
-					name: 'H4',
+					name: 'M2',
 				},
 				{
-					name: 'H4',
+					name: 'M2',
 				},
 				{
 					name: 'H2',
@@ -91,7 +91,7 @@ export default {
 			],
 			[
 				{
-					name: 'H4',
+					name: 'M2',
 				},
 				{
 					name: 'L1',
@@ -103,7 +103,7 @@ export default {
 					name: 'H2',
 				},
 				{
-					name: 'H4',
+					name: 'M2',
 				},
 				{
 					name: 'H2',
@@ -126,7 +126,7 @@ export default {
 					name: 'L1',
 				},
 				{
-					name: 'H3',
+					name: 'M1',
 				},
 				{
 					name: 'H1',
@@ -161,16 +161,16 @@ export default {
 					name: 'H1',
 				},
 				{
-					name: 'H4',
+					name: 'M2',
 				},
 				{
-					name: 'H4',
+					name: 'M2',
 				},
 				{
 					name: 'H2',
 				},
 				{
-					name: 'H3',
+					name: 'M1',
 				},
 				{
 					name: 'H2',
@@ -187,7 +187,7 @@ export default {
 					name: 'L3',
 				},
 				{
-					name: 'H3',
+					name: 'M1',
 				},
 				{
 					name: 'H1',
@@ -196,10 +196,10 @@ export default {
 					name: 'L3',
 				},
 				{
-					name: 'H3',
+					name: 'M1',
 				},
 				{
-					name: 'H3',
+					name: 'M1',
 				},
 				{
 					name: 'H2',
@@ -324,16 +324,16 @@ export default {
 			],
 			[
 				{
-					name: 'H3',
+					name: 'M1',
 				},
 				{
-					name: 'H4',
+					name: 'M2',
 				},
 				{
 					name: 'H2',
 				},
 				{
-					name: 'H3',
+					name: 'M1',
 				},
 			],
 			[
@@ -431,13 +431,13 @@ export default {
 	updateGrid: {
 		type: 'updateGrid',
 		gridMultipliers: [
-			[0, 0, 0, 1, 0, 0, 0],
-			[0, 0, 1, 1, 1, 0, 0],
-			[0, 1, 1, 1, 1, 1, 0],
-			[1, 1, 1, 2, 1, 1, 1],
-			[0, 1, 1, 1, 1, 1, 0],
-			[0, 0, 1, 1, 1, 0, 0],
-			[0, 0, 0, 1, 0, 0, 0],
+			[0, 0, 0, -1, 0, 0, 0],
+			[0, 0, -1, -1, -1, 0, 0],
+			[0, -1, -1, -1, -1, -1, 0],
+			[-1, -1, -1, 2, -1, -1, -1],
+			[0, -1, -1, -1, -1, -1, 0],
+			[0, 0, -1, -1, -1, 0, 0],
+			[0, 0, 0, -1, 0, 0, 0],
 		],
 	},
 	freeSpinEnd: {

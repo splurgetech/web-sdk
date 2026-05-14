@@ -11,7 +11,7 @@
 
 	import BoardContainer from './BoardContainer.svelte';
 	import { getContext } from '../game/context';
-	import { SYMBOL_SIZE } from '../game/constants';
+	import { GRID_MULT_PENDING, SYMBOL_SIZE } from '../game/constants';
 
 	const context = getContext();
 	const DEFAULT_GRID = [
@@ -39,12 +39,16 @@
 	{#if show}
 		{#each grid as reel, reelIndex}
 			{#each reel as multiplier, rowIndex}
-				{#if multiplier > 0}
-					<Container x={(reelIndex + 0.5) * SYMBOL_SIZE} y={(rowIndex + 0.5) * SYMBOL_SIZE}>
+				{#if multiplier === GRID_MULT_PENDING || multiplier >= 2}
+					<Container
+						x={(reelIndex + 0.5) * SYMBOL_SIZE}
+						y={(rowIndex + 0.5) * SYMBOL_SIZE}
+						alpha={multiplier === GRID_MULT_PENDING ? 0.55 : 1}
+					>
 						<SpineProvider key="anticipation" width={SYMBOL_SIZE * 0.19}>
 							<SpineTrack trackIndex={0} animationName={'payframe'} loop />
 						</SpineProvider>
-						{#if multiplier > 1}
+						{#if multiplier >= 2}
 							<BitmapText
 								x={-SYMBOL_SIZE * 0.05}
 								anchor={{

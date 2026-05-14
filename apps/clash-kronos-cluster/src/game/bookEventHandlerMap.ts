@@ -36,9 +36,11 @@ const winLevelSoundsStop = () => {
 
 const animateSymbols = async ({ positions }: { positions: Position[] }) => {
 	eventEmitter.broadcast({ type: 'boardShow' });
+	// One reelSymbol can only hold one `oncomplete` resolver; overlapping wins reuse the same cell.
+	const symbolPositions = _.uniqBy(positions, (p) => `${p.reel},${p.row}`);
 	await eventEmitter.broadcastAsync({
 		type: 'boardWithAnimateSymbols',
-		symbolPositions: positions,
+		symbolPositions,
 	});
 };
 
@@ -249,6 +251,7 @@ export const bookEventHandlerMap: BookEventHandlerMap<BookEvent, BookEventContex
 			type: 'kronosStrikePlay',
 			hits: bookEvent.hits,
 		});
+		stateGameDerived.enhancedBoard.settle(bookEvent.board);
 		eventEmitter.broadcast({ type: 'kronosStrikeClear' });
 	},
 	finalWin: async (bookEvent: BookEventOfType<'finalWin'>) => {

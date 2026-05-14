@@ -286,7 +286,7 @@
         [
           0,
           0,
-          2,
+          -1,
           0,
           0,
           0,
@@ -295,8 +295,8 @@
         [
           0,
           0,
-          2,
-          2,
+          -1,
+          -1,
           0,
           0,
           0
@@ -305,7 +305,7 @@
           0,
           0,
           0,
-          2,
+          -1,
           0,
           0,
           0
@@ -314,7 +314,7 @@
           0,
           0,
           0,
-          2,
+          -1,
           0,
           0,
           0
@@ -350,12 +350,6 @@
     },
     {
       "index": 4,
-      "type": "kronosBar",
-      "progress": 5,
-      "filled": false
-    },
-    {
-      "index": 5,
       "type": "tumbleBoard",
       "newSymbols": [
         [
@@ -409,14 +403,20 @@
       ]
     },
     {
+      "index": 5,
+      "type": "kronosBar",
+      "progress": 5,
+      "filled": false
+    },
+    {
       "index": 6,
       "type": "winInfo",
-      "totalWin": 437,
+      "totalWin": 55,
       "wins": [
         {
           "symbol": "L2",
           "clusterSize": 7,
-          "win": 437,
+          "win": 55,
           "positions": [
             {
               "reel": 1,
@@ -449,7 +449,7 @@
           ],
           "meta": {
             "globalMult": 1,
-            "clusterMult": 8,
+            "clusterMult": 1,
             "winWithoutMult": 54,
             "overlay": {
               "reel": 2,
@@ -462,7 +462,7 @@
     {
       "index": 7,
       "type": "updateTumbleWin",
-      "amount": 457
+      "amount": 75
     },
     {
       "index": 8,
@@ -471,35 +471,8 @@
         [
           0,
           0,
-          2,
+          -1,
           0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          4,
-          4,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          4,
-          2,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          4,
           0,
           0,
           0
@@ -509,6 +482,33 @@
           0,
           2,
           2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1,
+          -1,
           0,
           0,
           0
@@ -535,12 +535,6 @@
     },
     {
       "index": 9,
-      "type": "kronosBar",
-      "progress": 12,
-      "filled": false
-    },
-    {
-      "index": 10,
       "type": "tumbleBoard",
       "newSymbols": [
         [],
@@ -609,20 +603,26 @@
       ]
     },
     {
+      "index": 10,
+      "type": "kronosBar",
+      "progress": 12,
+      "filled": false
+    },
+    {
       "index": 11,
       "type": "setWin",
-      "amount": 457,
-      "winLevel": 4
+      "amount": 75,
+      "winLevel": 2
     },
     {
       "index": 12,
       "type": "setTotalWin",
-      "amount": 457
+      "amount": 75
     },
     {
       "index": 13,
       "type": "finalWin",
-      "amount": 457
+      "amount": 75
     }
   ]
 }

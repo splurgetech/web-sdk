@@ -91,6 +91,7 @@ type BookEventSetWin = {
 type BookEventUpdateGrid = {
 	index: number;
 	type: 'updateGrid';
+	/** `0` = empty, `-1` = pending ticket (no numeric mult until next win on cell), `>= 2` = multiplier value */
 	gridMultipliers: number[][];
 };
 
@@ -105,6 +106,8 @@ type BookEventKronosStrike = {
 	index: number;
 	type: 'kronosStrike';
 	hits: { reel: number; row: number }[];
+	/** Padded client board after all bolt wilds are applied (same shape as `reveal.board`). */
+	board: RawSymbol[][];
 };
 
 type BookEventFreeSpinRetrigger = {
@@ -138,9 +141,7 @@ export type BookEvent =
 	| BookEventUpdateGrid
 	| BookEventFreeSpinRetrigger
 	| BookEventKronosBar
-	| BookEventKronosStrike
-	// customised
-	| BookEventCreateBonusSnapshot;
+	| BookEventKronosStrike;
 
 export type Bet = BetType<BookEvent>;
 export type BookEventOfType<T> = Extract<BookEvent, { type: T }>;

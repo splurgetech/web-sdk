@@ -319,7 +319,7 @@
           0,
           0,
           0,
-          2,
+          -1,
           0
         ],
         [
@@ -328,7 +328,7 @@
           0,
           0,
           0,
-          2,
+          -1,
           0
         ],
         [
@@ -337,28 +337,22 @@
           0,
           0,
           0,
-          2,
+          -1,
           0
         ],
         [
           0,
           0,
           0,
-          2,
-          2,
-          2,
+          -1,
+          -1,
+          -1,
           0
         ]
       ]
     },
     {
       "index": 4,
-      "type": "kronosBar",
-      "progress": 6,
-      "filled": false
-    },
-    {
-      "index": 5,
       "type": "tumbleBoard",
       "newSymbols": [
         [],
@@ -417,6 +411,12 @@
           "row": 4
         }
       ]
+    },
+    {
+      "index": 5,
+      "type": "kronosBar",
+      "progress": 6,
+      "filled": false
     },
     {
       "index": 6,

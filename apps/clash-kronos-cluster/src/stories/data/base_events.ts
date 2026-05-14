@@ -1,3 +1,21 @@
+import { INITIAL_BOARD } from '../../game/constants';
+import type { RawSymbol } from '../../game/types';
+
+const strikeBoardWithWilds = (hits: { reel: number; row: number }[]): RawSymbol[][] => {
+	const board = structuredClone(INITIAL_BOARD) as RawSymbol[][];
+	for (const h of hits) {
+		board[h.reel][h.row] = { name: 'W' };
+	}
+	return board;
+};
+
+const kronosStrikeStoryHits = [
+	{ reel: 1, row: 2 },
+	{ reel: 3, row: 4 },
+	{ reel: 5, row: 1 },
+	{ reel: 2, row: 3 },
+];
+
 export default {
 	reveal: {
 		type: 'reveal',
@@ -28,7 +46,7 @@ export default {
 					name: 'L3',
 				},
 				{
-					name: 'H3',
+					name: 'M1',
 				},
 			],
 			[
@@ -65,7 +83,7 @@ export default {
 					name: 'L3',
 				},
 				{
-					name: 'H3',
+					name: 'M1',
 				},
 				{
 					name: 'L1',
@@ -74,16 +92,16 @@ export default {
 					name: 'L1',
 				},
 				{
-					name: 'H4',
+					name: 'M2',
 				},
 				{
 					name: 'L2',
 				},
 				{
-					name: 'H4',
+					name: 'M2',
 				},
 				{
-					name: 'H4',
+					name: 'M2',
 				},
 				{
 					name: 'H2',
@@ -91,7 +109,7 @@ export default {
 			],
 			[
 				{
-					name: 'H4',
+					name: 'M2',
 				},
 				{
 					name: 'L1',
@@ -103,7 +121,7 @@ export default {
 					name: 'H2',
 				},
 				{
-					name: 'H4',
+					name: 'M2',
 				},
 				{
 					name: 'H2',
@@ -126,7 +144,7 @@ export default {
 					name: 'L1',
 				},
 				{
-					name: 'H3',
+					name: 'M1',
 				},
 				{
 					name: 'H1',
@@ -161,16 +179,16 @@ export default {
 					name: 'H1',
 				},
 				{
-					name: 'H4',
+					name: 'M2',
 				},
 				{
-					name: 'H4',
+					name: 'M2',
 				},
 				{
 					name: 'H2',
 				},
 				{
-					name: 'H3',
+					name: 'M1',
 				},
 				{
 					name: 'H2',
@@ -187,7 +205,7 @@ export default {
 					name: 'L3',
 				},
 				{
-					name: 'H3',
+					name: 'M1',
 				},
 				{
 					name: 'H1',
@@ -196,10 +214,10 @@ export default {
 					name: 'L3',
 				},
 				{
-					name: 'H3',
+					name: 'M1',
 				},
 				{
-					name: 'H3',
+					name: 'M1',
 				},
 				{
 					name: 'H2',
@@ -324,16 +342,16 @@ export default {
 			],
 			[
 				{
-					name: 'H3',
+					name: 'M1',
 				},
 				{
-					name: 'H4',
+					name: 'M2',
 				},
 				{
 					name: 'H2',
 				},
 				{
-					name: 'H3',
+					name: 'M1',
 				},
 			],
 			[
@@ -431,13 +449,13 @@ export default {
 	updateGrid: {
 		type: 'updateGrid',
 		gridMultipliers: [
-			[0, 0, 0, 1, 0, 0, 0],
-			[0, 0, 1, 1, 1, 0, 0],
-			[0, 1, 1, 1, 1, 1, 0],
-			[1, 1, 1, 2, 1, 1, 1],
-			[0, 1, 1, 1, 1, 1, 0],
-			[0, 0, 1, 1, 1, 0, 0],
-			[0, 0, 0, 1, 0, 0, 0],
+			[0, 0, 0, -1, 0, 0, 0],
+			[0, 0, -1, -1, -1, 0, 0],
+			[0, -1, -1, -1, -1, -1, 0],
+			[-1, -1, -1, 2, -1, -1, -1],
+			[0, -1, -1, -1, -1, -1, 0],
+			[0, 0, -1, -1, -1, 0, 0],
+			[0, 0, 0, -1, 0, 0, 0],
 		],
 	},
 	freeSpinEnd: {
@@ -468,11 +486,7 @@ export default {
 	kronosStrike: {
 		index: 0,
 		type: 'kronosStrike',
-		hits: [
-			{ reel: 1, row: 2 },
-			{ reel: 3, row: 4 },
-			{ reel: 5, row: 1 },
-			{ reel: 1, row: 2 },
-		],
+		hits: kronosStrikeStoryHits,
+		board: strikeBoardWithWilds(kronosStrikeStoryHits),
 	},
 };

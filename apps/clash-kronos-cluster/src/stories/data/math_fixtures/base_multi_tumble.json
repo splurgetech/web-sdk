@@ -335,28 +335,22 @@
           0,
           0,
           0,
-          2,
-          2
+          -1,
+          -1
         ],
         [
           0,
           0,
           0,
-          2,
-          2,
-          2,
+          -1,
+          -1,
+          -1,
           0
         ]
       ]
     },
     {
       "index": 4,
-      "type": "kronosBar",
-      "progress": 5,
-      "filled": false
-    },
-    {
-      "index": 5,
       "type": "tumbleBoard",
       "newSymbols": [
         [],
@@ -409,14 +403,20 @@
       ]
     },
     {
+      "index": 5,
+      "type": "kronosBar",
+      "progress": 5,
+      "filled": false
+    },
+    {
       "index": 6,
       "type": "winInfo",
-      "totalWin": 120,
+      "totalWin": 20,
       "wins": [
         {
           "symbol": "L3",
           "clusterSize": 5,
-          "win": 120,
+          "win": 20,
           "positions": [
             {
               "reel": 4,
@@ -441,7 +441,7 @@
           ],
           "meta": {
             "globalMult": 1,
-            "clusterMult": 6,
+            "clusterMult": 1,
             "winWithoutMult": 20,
             "overlay": {
               "reel": 5,
@@ -454,7 +454,7 @@
     {
       "index": 7,
       "type": "updateTumbleWin",
-      "amount": 190
+      "amount": 90
     },
     {
       "index": 8,
@@ -502,7 +502,7 @@
           0,
           0,
           0,
-          2,
+          -1,
           0
         ],
         [
@@ -510,29 +510,23 @@
           0,
           0,
           0,
+          -1,
           2,
-          4,
-          2
+          -1
         ],
         [
           0,
           0,
           0,
-          4,
-          4,
           2,
+          2,
+          -1,
           0
         ]
       ]
     },
     {
       "index": 9,
-      "type": "kronosBar",
-      "progress": 10,
-      "filled": false
-    },
-    {
-      "index": 10,
       "type": "tumbleBoard",
       "newSymbols": [
         [],
@@ -583,6 +577,12 @@
           "row": 4
         }
       ]
+    },
+    {
+      "index": 10,
+      "type": "kronosBar",
+      "progress": 10,
+      "filled": false
     },
     {
       "index": 11,
@@ -638,7 +638,7 @@
     {
       "index": 12,
       "type": "updateTumbleWin",
-      "amount": 245
+      "amount": 145
     },
     {
       "index": 13,
@@ -675,7 +675,7 @@
           0,
           0,
           0,
-          2,
+          -1,
           0,
           0,
           0
@@ -684,39 +684,33 @@
           0,
           0,
           0,
-          2,
+          -1,
           0,
-          2,
+          -1,
           0
         ],
         [
           0,
+          -1,
+          -1,
+          -1,
+          -1,
           2,
-          2,
-          2,
-          2,
-          4,
-          2
+          -1
         ],
         [
-          2,
-          2,
+          -1,
+          -1,
           0,
-          4,
-          4,
           2,
+          2,
+          -1,
           0
         ]
       ]
     },
     {
       "index": 14,
-      "type": "kronosBar",
-      "progress": 17,
-      "filled": false
-    },
-    {
-      "index": 15,
       "type": "tumbleBoard",
       "newSymbols": [
         [],
@@ -784,20 +778,26 @@
       ]
     },
     {
+      "index": 15,
+      "type": "kronosBar",
+      "progress": 17,
+      "filled": false
+    },
+    {
       "index": 16,
       "type": "setWin",
-      "amount": 245,
-      "winLevel": 4
+      "amount": 145,
+      "winLevel": 3
     },
     {
       "index": 17,
       "type": "setTotalWin",
-      "amount": 245
+      "amount": 145
     },
     {
       "index": 18,
       "type": "finalWin",
-      "amount": 245
+      "amount": 145
     }
   ]
 }

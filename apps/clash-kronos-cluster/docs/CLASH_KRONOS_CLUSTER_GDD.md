@@ -26,23 +26,26 @@ This is the **canonical** design document for all mechanics, math targets, and S
 
 ---
 
-## Cell multiplier overlay — sum-multiplier formula
+## Cell multiplier overlay — sum-multiplier formula (Sugar Rush ladder)
 
 After a winning cluster is removed, **multiplier overlays are written onto those grid cells** before the next tumble:
 
-| Event | Cell multiplier value |
-|---|---|
-| First win touching this cell | **2×** |
-| Each subsequent win touching same cell | **doubles** (2 → 4 → 8 → …) |
-| Per-cell cap | **128×** |
+| Event | Stored cell value | UI |
+|---|---|---|
+| First win touching this cell | **Pending** (`-1` in book JSON) | Dimmed ticket, **no** numeric mult |
+| Second win touching same cell | **2×** | Show **2 X** |
+| Each further win on same cell | **doubles** (2 → 4 → 8 → …) | Show value |
+| Per-cell cap | **128×** | |
 
-**Win calculation per cluster:**
+Within one **paying step** (one cluster-evaluation pass / one `winInfo` batch before the next tumble), each cell advances the ladder **at most once**, even if it appears in **multiple** winning clusters (e.g. wild-linked splits).
+
+**Win calculation per cluster:** only cells with stored value **≥ 2** contribute to the sum. Pending (`-1`) and empty (`0`) contribute **0**.
 
 ```
-clusterWin = basePay(size, symbol) * max(1, sum of cell multipliers on all cells in that cluster)
+clusterWin = basePay(size, symbol) * max(1, sum of numeric cell multipliers on all cells in that cluster)
 ```
 
-`max(1, ...)` ensures the **first** cluster of a spin pays normally when all overlays are still zero.
+`max(1, ...)` ensures the **first** cluster of a spin pays normally when all overlays are still zero (or only pending tickets that do not add to the sum until promoted to 2×).
 
 ### Base vs free spins multiplier persistence
 
@@ -72,26 +75,25 @@ Per **exact cluster size** `n` for `n = 5..49` (or cap at max realistic size). N
 
 ## Kronos bar
 
-- Counts **every exploded symbol cell** removed in a winning cluster across the whole tumble sequence of a spin.
-- Bar range: **0–20**.
-- When bar reaches **20** it **stays at 20** until the strike resolves.
-- After strike, bar **resets to 0**.
-- Bar can reach 20 again later **in the same spin** for a **second strike** — does not stack to 40.
+- Counts **every exploded symbol cell** removed in a winning cluster across the whole tumble sequence of a spin (increment **after** each tumble removes symbols and new symbols have settled).
+- Bar range: **0–20** (display may show a brief “full” state when the count reaches the threshold).
+- When the bar reaches **20** after a tumble’s removals: **bolt collected**, bar **resets to 0** immediately (Kronos “holds” the bolt); wilds are **not** placed yet.
+- After the **next** tumble’s symbols have **settled**, Kronos fires **before** the next cluster evaluation; then bar can fill again in the same spin for a **second strike** — does not stack to 40.
 
 ---
 
 ## Kronos strike
 
-Triggered when the bar fills to 20. Runs **after** the cascade step that completed the "20 symbols" condition, **before** the next tumble evaluation.
+Triggered when the bar reaches **20** from removals in a completed tumble. The bolt is applied **only after** that tumble’s **explode + refill + settle** finishes: **`kronosStrike`** runs **before** the next **`winInfo`** / cluster pass on that settled grid (wilds are not inserted mid-cascade).
 
-**Default implementation:**
+**Implementation:**
 
-- Choose a **uniform random count in [3, 6]** inclusive.
-- Choose **uniform random cells with replacement** (same cell can be hit multiple times).
-- **Effect per hit:**
-  - Cell has **no multiplier overlay** → set **2×**
-  - Cell already has overlay → **double** it (e.g. 2× hit twice → 8×)
-- Emit a **single book event** listing all hits in order: `kronosStrike { hits: [{reel, row}, …] }`.
+- Sample a **uniform bolt count in [4, 10]** inclusive.
+- Choose **distinct** random cells on the **7×7 visible grid** (resample on duplicates).
+- Each hit replaces the cell symbol with **`W`** (wild). `W` does not appear on reel strips; it exists only after bolts.
+- Run **one** cluster pass with wilds substituting orthogonally (`W` matches adjacent pay symbols; a single `W` can contribute to multiple clusters).
+- Emit **`kronosStrike`** with ordered **`hits`** and a padded **`board`** snapshot (same shape as `reveal.board`) so the client can settle the grid replay-identically.
+- **No** `updateGrid` event is emitted solely for the strike; ladder updates follow normal winning tumbles only.
 
 ---
 
@@ -105,8 +107,9 @@ Triggered when the bar fills to 20. Runs **after** the cascade step that complet
 | 6 | 20 |
 | 7 | 30 |
 
-- **Same table for retrigger** during free spins.
-- **No cap** on total free spin count from retriggering.
+- **Same table for retrigger** during free spins (until the total-FS cap is reached).
+- **Total free spin cap:** **50** (initial award + all retriggers combined). `tot_fs` is clamped to 50 after each trigger; no further retriggers apply once at the cap.
+- **Scatter presentation at cap:** once `tot_fs` is at the cap, new free-spin outcomes are drawn from a scatter-free reel layout (`FR0_NS`: same as `FR0` with `S` replaced by `L1`) so players do not see 3+ scatter symbols with no possible retrigger.
 - **Anticipation:** enabled — configure `anticipation_triggers` from min trigger − 1 (i.e. 2 scatters triggers anticipation).
 - All Kronos bar / strike mechanics remain active during free spins.
 
@@ -131,7 +134,7 @@ Triggered when the bar fills to 20. Runs **after** the cascade step that complet
 | Volatility | TBD via simulation |
 | Base cost | **1.0** (default until decided) |
 | Symbol pays | TBD via simulation |
-| Wild variants | None |
+| Wild variants | `W` from Kronos bolts only (not on strips) |
 
 ---
 
@@ -144,9 +147,9 @@ Align names between math and web implementations for deterministic replay:
 | `reveal` | Initial board state |
 | Tumble board update | Board state after each tumble |
 | `winInfo` / tumble win | Cluster wins this step |
-| `kronosBar` | `{ progress: number, filled: boolean }` — bar state after each cluster removal |
-| `kronosStrike` | `{ hits: [{reel, row}, …] }` — all strike hits in order |
-| `gridMultipliers` | Snapshot of overlay grid after meaningful changes |
+| `kronosBar` | `{ progress: number, filled: boolean }` — after each tumble, reflects removals (`filled: true` at 20 = bolt collected, gold); a following `kronosBar(0)` is emitted **after** `kronosStrike` so the client can show gold until the bolt resolves |
+| `kronosStrike` | `{ hits: [{reel, row}, …], board }` — bolt order + padded board after wilds |
+| `gridMultipliers` | Snapshot of overlay grid (`0` empty, `-1` pending ticket, `>=2` numeric mult) |
 | `finalWin` | Round total |
 | FS trigger / FS counter / FS end | Free spins lifecycle |
 | `wincap` | Emitted if win cap is hit |
@@ -157,8 +160,8 @@ Align names between math and web implementations for deterministic replay:
 
 - CSV files under `games/0_0_clash_kronos_cluster/reels/` — each column is one reel, each row is a stop.
 - **SCATTER** appears on all **7 reels**.
-- **7 regular symbols** only (`L1`–`L3`, `M1`–`M2`, `H1`–`H2`).
-- No wilds.
+- **7 regular symbols** on strips (`L1`–`L3`, `M1`–`M2`, `H1`–`H2`).
+- **`W`** appears on the grid only from **Kronos bolts**, not from reel strips.
 
 ---
 
@@ -167,9 +170,9 @@ Align names between math and web implementations for deterministic replay:
 - Fork from `math-sdk/games/0_0_cluster/` — game ID `0_0_clash_kronos_cluster`.
 - Grid config: `num_reels = 7`, `num_rows = 7`.
 - Replace free-spin grid mult loop with sum-mult rules above.
-- Win eval: `basePay * max(1, sum(cellMult))`, enforce 128× cap after each cell update.
-- Bar/strike: new module `game_kronos_bar.py` — pure functions for bar state machine and `apply_strike`.
-- Prefer `Cluster.get_clusters` (no wild substitution needed — set wild key unused).
+- Win eval: `basePay * max(1, sum(numeric cell mults))`; pending `-1` contributes 0; cap **128×** per cell after each update.
+- Bar/strike: `game_kronos_bar.py` — bar state machine and `apply_kronos_bolts` (unique cells, `W` placement).
+- Clustering: `Cluster.get_clusters(..., wild_key="wild")` so `W` substitutes orthogonally in the post-strike evaluation.
 
 ---
 
