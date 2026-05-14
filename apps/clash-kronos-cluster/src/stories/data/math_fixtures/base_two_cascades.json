@@ -3,6 +3,12 @@
   "events": [
     {
       "index": 0,
+      "type": "kronosBar",
+      "progress": 0,
+      "filled": false
+    },
+    {
+      "index": 1,
       "type": "reveal",
       "board": [
         [
@@ -232,7 +238,7 @@
       ]
     },
     {
-      "index": 1,
+      "index": 2,
       "type": "winInfo",
       "totalWin": 20,
       "wins": [
@@ -275,12 +281,12 @@
       ]
     },
     {
-      "index": 2,
+      "index": 3,
       "type": "updateTumbleWin",
       "amount": 20
     },
     {
-      "index": 3,
+      "index": 4,
       "type": "updateGrid",
       "gridMultipliers": [
         [
@@ -349,7 +355,7 @@
       ]
     },
     {
-      "index": 4,
+      "index": 5,
       "type": "tumbleBoard",
       "newSymbols": [
         [
@@ -403,13 +409,13 @@
       ]
     },
     {
-      "index": 5,
+      "index": 6,
       "type": "kronosBar",
       "progress": 5,
       "filled": false
     },
     {
-      "index": 6,
+      "index": 7,
       "type": "winInfo",
       "totalWin": 55,
       "wins": [
@@ -460,12 +466,12 @@
       ]
     },
     {
-      "index": 7,
+      "index": 8,
       "type": "updateTumbleWin",
       "amount": 75
     },
     {
-      "index": 8,
+      "index": 9,
       "type": "updateGrid",
       "gridMultipliers": [
         [
@@ -534,7 +540,7 @@
       ]
     },
     {
-      "index": 9,
+      "index": 10,
       "type": "tumbleBoard",
       "newSymbols": [
         [],
@@ -603,24 +609,24 @@
       ]
     },
     {
-      "index": 10,
+      "index": 11,
       "type": "kronosBar",
       "progress": 12,
       "filled": false
     },
     {
-      "index": 11,
+      "index": 12,
       "type": "setWin",
       "amount": 75,
       "winLevel": 2
     },
     {
-      "index": 12,
+      "index": 13,
       "type": "setTotalWin",
       "amount": 75
     },
     {
-      "index": 13,
+      "index": 14,
       "type": "finalWin",
       "amount": 75
     }
