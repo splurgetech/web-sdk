@@ -88,9 +88,9 @@ Triggered when the bar reaches **20** from removals in a completed tumble. The b
 
 **Implementation:**
 
-- Sample a **uniform bolt count in [4, 10]** inclusive.
-- Choose **distinct** random cells on the **7×7 visible grid** (resample on duplicates).
-- Each hit replaces the cell symbol with **`W`** (wild). `W` does not appear on reel strips; it exists only after bolts.
+- Build the set of **paying symbol names** that appear on the **7×7 visible grid** (exclude scatter and any existing **`W`**).
+- Pick **one** name uniformly at random from that set (never a symbol absent from the board).
+- Replace **every** cell of that name with **`W`** (wild). `W` does not appear on reel strips; it exists only after the strike.
 - Run **one** cluster pass with wilds substituting orthogonally (`W` matches adjacent pay symbols; a single `W` can contribute to multiple clusters).
 - Emit **`kronosStrike`** with ordered **`hits`** and a padded **`board`** snapshot (same shape as `reveal.board`) so the client can settle the grid replay-identically.
 - **No** `updateGrid` event is emitted solely for the strike; ladder updates follow normal winning tumbles only.
@@ -129,11 +129,11 @@ Triggered when the bar reaches **20** from removals in a completed tumble. The b
 
 | Target | Value |
 |---|---|
-| Win cap | **5000×** bet |
-| RTP | **96–97%** band |
+| Win cap | **25,000×** bet |
+| RTP | **~96.5%** target (`game_config.rtp`; verify with `run.py`) |
 | Volatility | TBD via simulation |
 | Base cost | **1.0** (default until decided) |
-| Symbol pays | TBD via simulation |
+| Symbol pays | Stepped ladder (SR1000-shaped), scaled by `PAYTABLE_SCALE` (default in `game_config`); see `paytable_sugar_rush1000.py` |
 | Wild variants | `W` from Kronos bolts only (not on strips) |
 
 ---
@@ -171,7 +171,7 @@ Align names between math and web implementations for deterministic replay:
 - Grid config: `num_reels = 7`, `num_rows = 7`.
 - Replace free-spin grid mult loop with sum-mult rules above.
 - Win eval: `basePay * max(1, sum(numeric cell mults))`; pending `-1` contributes 0; cap **128×** per cell after each update.
-- Bar/strike: `game_kronos_bar.py` — bar state machine and `apply_kronos_bolts` (unique cells, `W` placement).
+- Bar/strike: `game_kronos_bar.py` — bar state machine and `apply_kronos_bolts` (replace all cells of one random on-board paying symbol with `W`).
 - Clustering: `Cluster.get_clusters(..., wild_key="wild")` so `W` substitutes orthogonally in the post-strike evaluation.
 
 ---
