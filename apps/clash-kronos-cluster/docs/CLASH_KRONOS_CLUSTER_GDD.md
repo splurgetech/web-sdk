@@ -133,7 +133,7 @@ Triggered when the bar reaches **20** from removals in a completed tumble. The b
 | RTP | **~96.5%** target (`game_config.rtp`; verify with `run.py`) |
 | Volatility | TBD via simulation |
 | Base cost | **1.0** (default until decided) |
-| Symbol pays | Stepped ladder (SR1000-shaped), scaled by `PAYTABLE_SCALE` (default **0.0007** in math `game_config`); see `paytable_sugar_rush1000.py`; Rust **optimization** produces weighted `lookUpTable_*_0` for ~96.5% RTP |
+| Symbol pays | Stepped ladder (SR1000-shaped), scaled by `PAYTABLE_SCALE` (default **1.0** in math `game_config`); see `paytable_sugar_rush1000.py`; Rust **optimization** produces weighted `lookUpTable_*_0` for ~96.5% RTP |
 | Wild variants | `W` from Kronos bolts only (not on strips) |
 
 ---

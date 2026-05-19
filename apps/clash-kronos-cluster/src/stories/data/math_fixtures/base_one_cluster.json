@@ -240,12 +240,12 @@
     {
       "index": 2,
       "type": "winInfo",
-      "totalWin": 57,
+      "totalWin": 50,
       "wins": [
         {
           "symbol": "L3",
           "clusterSize": 6,
-          "win": 27,
+          "win": 25,
           "positions": [
             {
               "reel": 0,
@@ -275,7 +275,7 @@
           "meta": {
             "globalMult": 1,
             "clusterMult": 1,
-            "winWithoutMult": 27,
+            "winWithoutMult": 25,
             "overlay": {
               "reel": 1,
               "row": 2
@@ -285,7 +285,7 @@
         {
           "symbol": "L2",
           "clusterSize": 5,
-          "win": 30,
+          "win": 25,
           "positions": [
             {
               "reel": 5,
@@ -311,7 +311,7 @@
           "meta": {
             "globalMult": 1,
             "clusterMult": 1,
-            "winWithoutMult": 30,
+            "winWithoutMult": 25,
             "overlay": {
               "reel": 6,
               "row": 4
@@ -323,7 +323,7 @@
     {
       "index": 3,
       "type": "updateTumbleWin",
-      "amount": 57
+      "amount": 50
     },
     {
       "index": 4,
@@ -500,18 +500,18 @@
     {
       "index": 7,
       "type": "setWin",
-      "amount": 57,
+      "amount": 50,
       "winLevel": 2
     },
     {
       "index": 8,
       "type": "setTotalWin",
-      "amount": 57
+      "amount": 50
     },
     {
       "index": 9,
       "type": "finalWin",
-      "amount": 57
+      "amount": 50
     }
   ]
 }

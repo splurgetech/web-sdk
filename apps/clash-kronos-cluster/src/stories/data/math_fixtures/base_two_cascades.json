@@ -417,12 +417,12 @@
     {
       "index": 7,
       "type": "winInfo",
-      "totalWin": 55,
+      "totalWin": 40,
       "wins": [
         {
           "symbol": "L2",
           "clusterSize": 7,
-          "win": 55,
+          "win": 40,
           "positions": [
             {
               "reel": 1,
@@ -456,7 +456,7 @@
           "meta": {
             "globalMult": 1,
             "clusterMult": 1,
-            "winWithoutMult": 54,
+            "winWithoutMult": 40,
             "overlay": {
               "reel": 2,
               "row": 4
@@ -468,7 +468,7 @@
     {
       "index": 8,
       "type": "updateTumbleWin",
-      "amount": 75
+      "amount": 60
     },
     {
       "index": 9,
@@ -617,18 +617,18 @@
     {
       "index": 12,
       "type": "setWin",
-      "amount": 75,
+      "amount": 60,
       "winLevel": 2
     },
     {
       "index": 13,
       "type": "setTotalWin",
-      "amount": 75
+      "amount": 60
     },
     {
       "index": 14,
       "type": "finalWin",
-      "amount": 75
+      "amount": 60
     }
   ]
 }
