@@ -10,7 +10,7 @@ pnpm install
 
 # Run Storybook for a specific app (primary dev workflow)
 pnpm run storybook --filter=<app-name>
-# e.g. pnpm run storybook --filter=clash-kronos-cluster   (port 6008)
+# e.g. pnpm run storybook --filter=clash-kronos   (port 6008)
 #      pnpm run storybook --filter=cluster                 (port 6001)
 #      pnpm run storybook --filter=lines                   (port 6001)
 
@@ -28,7 +28,7 @@ pnpm run format
 pnpm run build --filter=pixi-svelte
 ```
 
-All app packages use the same default ports (6001 Storybook, 3001 dev) except `clash-kronos-cluster` which uses 6008 / 3008 — run only one at a time unless ports differ.
+All app packages use the same default ports (6001 Storybook, 3001 dev) except `clash-kronos` which uses 6008 / 3008 — run only one at a time unless ports differ.
 
 Node 22.16.0, pnpm 10.5.0 required.
 
@@ -36,7 +36,7 @@ Node 22.16.0, pnpm 10.5.0 required.
 
 ```
 apps/           # Game apps — each is a self-contained SvelteKit + Storybook app
-  clash-kronos-cluster/   # Active Kronos cluster build (7×7, no wilds)
+  clash-kronos/           # Clash of Kronos (7×7, hidden mults, Kronos bar)
   cluster/                # Reference cluster sample (7×7, wild multiplier)
   lines/                  # Reference lines sample
   ...
@@ -104,18 +104,17 @@ Each app has four story files:
 
 Every story file calls `setContext()` before rendering `<Game />`.
 
-## Clash of Kronos Cluster (`apps/clash-kronos-cluster`)
+## Clash of Kronos (`apps/clash-kronos`)
 
-The active game under development. Canonical design: `apps/clash-kronos-cluster/docs/CLASH_KRONOS_CLUSTER_GDD.md`.
+Active game. Canonical design: `apps/clash-kronos/docs/GDD.md`. Math: `math-sdk/games/0_0_clash_kronos`.
 
-Key differences from the `cluster` reference app:
-- **No wilds** — symbol set is `L1–L3`, `M1–M2`, `H1–H2`, `SCATTER` only.
-- **Cell multiplier overlay** — `updateGrid` event (`gridMultipliers: number[][]`, 7×7) already exists in the cluster app and is the naming convention to follow.
-- **New events to implement**: `kronosBar { progress: number; filled?: boolean }` and `kronosStrike { hits: { reel: number; row: number }[] }`.
-- **Free spins**: cell multipliers persist across free spins (not reset between individual FS spins); reset only at bonus end.
+- **7×7 grid** — symbols `A`–`G`, `SC`, `WD` (wild from Kronos transform only).
+- **Hidden cell multipliers** — `reveal.hiddenMults`; collect via `collectHiddenMults` into additive global mult.
+- **Book events**: `kronosBar`, `kronosTransform`, `collectHiddenMults`, `updateGlobalMult` (no `updateGrid` / lightning / bomb).
+- **Free spins**: global mult starts at 0 in bonus and accumulates across FS spins.
 - **Storybook port: 6008**, dev port: 3008.
 
-The app was scaffolded from `apps/cluster` — all cluster patterns (tumble board, multiplier grid, free spin counter, global mult, etc.) are present as a starting point.
+Scaffolded from `apps/cluster`. Reference games (`cluster`, `lines`, etc.) unchanged.
 
 ## Key constants per app (`src/game/constants.ts`)
 

@@ -1,0 +1,1392 @@
+{
+  "gameType": "basegame",
+  "events": [
+    {
+      "index": 0,
+      "type": "kronosBar",
+      "progress": 0,
+      "threshold": 20,
+      "filled": false
+    },
+    {
+      "index": 1,
+      "type": "reveal",
+      "board": [
+        [
+          {
+            "name": "G"
+          },
+          {
+            "name": "D"
+          },
+          {
+            "name": "D"
+          },
+          {
+            "name": "C"
+          },
+          {
+            "name": "C"
+          },
+          {
+            "name": "G"
+          },
+          {
+            "name": "G"
+          },
+          {
+            "name": "G"
+          },
+          {
+            "name": "F"
+          }
+        ],
+        [
+          {
+            "name": "C"
+          },
+          {
+            "name": "F"
+          },
+          {
+            "name": "F"
+          },
+          {
+            "name": "C"
+          },
+          {
+            "name": "D"
+          },
+          {
+            "name": "SC",
+            "scatter": true
+          },
+          {
+            "name": "D"
+          },
+          {
+            "name": "F"
+          },
+          {
+            "name": "F"
+          }
+        ],
+        [
+          {
+            "name": "D"
+          },
+          {
+            "name": "F"
+          },
+          {
+            "name": "F"
+          },
+          {
+            "name": "C"
+          },
+          {
+            "name": "C"
+          },
+          {
+            "name": "F"
+          },
+          {
+            "name": "D"
+          },
+          {
+            "name": "D"
+          },
+          {
+            "name": "D"
+          }
+        ],
+        [
+          {
+            "name": "G"
+          },
+          {
+            "name": "C"
+          },
+          {
+            "name": "C"
+          },
+          {
+            "name": "D"
+          },
+          {
+            "name": "C"
+          },
+          {
+            "name": "C"
+          },
+          {
+            "name": "F"
+          },
+          {
+            "name": "F"
+          },
+          {
+            "name": "C"
+          }
+        ],
+        [
+          {
+            "name": "C"
+          },
+          {
+            "name": "F"
+          },
+          {
+            "name": "C"
+          },
+          {
+            "name": "C"
+          },
+          {
+            "name": "B"
+          },
+          {
+            "name": "G"
+          },
+          {
+            "name": "G"
+          },
+          {
+            "name": "C"
+          },
+          {
+            "name": "B"
+          }
+        ],
+        [
+          {
+            "name": "C"
+          },
+          {
+            "name": "F"
+          },
+          {
+            "name": "F"
+          },
+          {
+            "name": "C"
+          },
+          {
+            "name": "C"
+          },
+          {
+            "name": "E"
+          },
+          {
+            "name": "E"
+          },
+          {
+            "name": "F"
+          },
+          {
+            "name": "E"
+          }
+        ],
+        [
+          {
+            "name": "F"
+          },
+          {
+            "name": "F"
+          },
+          {
+            "name": "E"
+          },
+          {
+            "name": "SC",
+            "scatter": true
+          },
+          {
+            "name": "F"
+          },
+          {
+            "name": "F"
+          },
+          {
+            "name": "G"
+          },
+          {
+            "name": "F"
+          },
+          {
+            "name": "G"
+          }
+        ]
+      ],
+      "paddingPositions": [
+        5,
+        191,
+        68,
+        188,
+        163,
+        8,
+        99
+      ],
+      "gameType": "basegame",
+      "anticipation": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "hiddenMults": [
+        {
+          "reel": 0,
+          "row": 3,
+          "value": 1
+        },
+        {
+          "reel": 0,
+          "row": 5,
+          "value": 1
+        },
+        {
+          "reel": 0,
+          "row": 6,
+          "value": 3
+        },
+        {
+          "reel": 1,
+          "row": 0,
+          "value": 3
+        },
+        {
+          "reel": 1,
+          "row": 4,
+          "value": 1
+        },
+        {
+          "reel": 1,
+          "row": 5,
+          "value": 2
+        },
+        {
+          "reel": 1,
+          "row": 6,
+          "value": 4
+        },
+        {
+          "reel": 2,
+          "row": 0,
+          "value": 1
+        },
+        {
+          "reel": 2,
+          "row": 1,
+          "value": 2
+        },
+        {
+          "reel": 2,
+          "row": 3,
+          "value": 4
+        },
+        {
+          "reel": 2,
+          "row": 6,
+          "value": 1
+        },
+        {
+          "reel": 3,
+          "row": 0,
+          "value": 1
+        },
+        {
+          "reel": 3,
+          "row": 2,
+          "value": 1
+        },
+        {
+          "reel": 3,
+          "row": 3,
+          "value": 2
+        },
+        {
+          "reel": 3,
+          "row": 4,
+          "value": 8
+        },
+        {
+          "reel": 3,
+          "row": 5,
+          "value": 2
+        },
+        {
+          "reel": 3,
+          "row": 6,
+          "value": 1
+        },
+        {
+          "reel": 4,
+          "row": 0,
+          "value": 3
+        },
+        {
+          "reel": 4,
+          "row": 1,
+          "value": 1
+        },
+        {
+          "reel": 4,
+          "row": 2,
+          "value": 7
+        },
+        {
+          "reel": 4,
+          "row": 3,
+          "value": 4
+        },
+        {
+          "reel": 4,
+          "row": 4,
+          "value": 2
+        },
+        {
+          "reel": 4,
+          "row": 6,
+          "value": 1
+        },
+        {
+          "reel": 5,
+          "row": 2,
+          "value": 1
+        },
+        {
+          "reel": 5,
+          "row": 3,
+          "value": 1
+        },
+        {
+          "reel": 5,
+          "row": 4,
+          "value": 2
+        },
+        {
+          "reel": 5,
+          "row": 6,
+          "value": 5
+        },
+        {
+          "reel": 6,
+          "row": 0,
+          "value": 3
+        },
+        {
+          "reel": 6,
+          "row": 3,
+          "value": 1
+        },
+        {
+          "reel": 6,
+          "row": 5,
+          "value": 1
+        },
+        {
+          "reel": 6,
+          "row": 6,
+          "value": 4
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "type": "winInfo",
+      "totalWin": 4,
+      "wins": [
+        {
+          "symbol": "C",
+          "clusterSize": 7,
+          "win": 3,
+          "positions": [
+            {
+              "reel": 0,
+              "row": 3
+            },
+            {
+              "reel": 1,
+              "row": 3
+            },
+            {
+              "reel": 2,
+              "row": 3
+            },
+            {
+              "reel": 2,
+              "row": 4
+            },
+            {
+              "reel": 3,
+              "row": 4
+            },
+            {
+              "reel": 3,
+              "row": 5
+            },
+            {
+              "reel": 0,
+              "row": 4
+            }
+          ],
+          "meta": {
+            "globalMult": 0,
+            "clusterMult": 0,
+            "winWithoutMult": 3,
+            "overlay": {
+              "reel": 2,
+              "row": 4
+            }
+          }
+        },
+        {
+          "symbol": "C",
+          "clusterSize": 6,
+          "win": 2,
+          "positions": [
+            {
+              "reel": 3,
+              "row": 1
+            },
+            {
+              "reel": 3,
+              "row": 2
+            },
+            {
+              "reel": 4,
+              "row": 2
+            },
+            {
+              "reel": 4,
+              "row": 3
+            },
+            {
+              "reel": 5,
+              "row": 3
+            },
+            {
+              "reel": 5,
+              "row": 4
+            }
+          ],
+          "meta": {
+            "globalMult": 0,
+            "clusterMult": 0,
+            "winWithoutMult": 1,
+            "overlay": {
+              "reel": 4,
+              "row": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "type": "updateTumbleWin",
+      "amount": 4
+    },
+    {
+      "index": 4,
+      "type": "collectHiddenMults",
+      "collected": [
+        {
+          "reel": 2,
+          "row": 3,
+          "value": 4
+        },
+        {
+          "reel": 3,
+          "row": 3,
+          "value": 2
+        },
+        {
+          "reel": 3,
+          "row": 4,
+          "value": 8
+        },
+        {
+          "reel": 0,
+          "row": 3,
+          "value": 1
+        },
+        {
+          "reel": 3,
+          "row": 0,
+          "value": 1
+        },
+        {
+          "reel": 4,
+          "row": 1,
+          "value": 1
+        },
+        {
+          "reel": 4,
+          "row": 2,
+          "value": 7
+        },
+        {
+          "reel": 5,
+          "row": 2,
+          "value": 1
+        },
+        {
+          "reel": 5,
+          "row": 3,
+          "value": 1
+        }
+      ],
+      "globalMult": 26
+    },
+    {
+      "index": 5,
+      "type": "updateGlobalMult",
+      "globalMult": 26
+    },
+    {
+      "index": 6,
+      "type": "tumbleBoard",
+      "newSymbols": [
+        [
+          {
+            "name": "E"
+          },
+          {
+            "name": "E"
+          }
+        ],
+        [
+          {
+            "name": "E"
+          }
+        ],
+        [
+          {
+            "name": "G"
+          },
+          {
+            "name": "D"
+          }
+        ],
+        [
+          {
+            "name": "B"
+          },
+          {
+            "name": "C"
+          },
+          {
+            "name": "D"
+          },
+          {
+            "name": "G"
+          }
+        ],
+        [
+          {
+            "name": "F"
+          },
+          {
+            "name": "F"
+          }
+        ],
+        [
+          {
+            "name": "F"
+          },
+          {
+            "name": "C"
+          }
+        ],
+        []
+      ],
+      "explodingSymbols": [
+        {
+          "reel": 0,
+          "row": 3
+        },
+        {
+          "reel": 0,
+          "row": 4
+        },
+        {
+          "reel": 1,
+          "row": 3
+        },
+        {
+          "reel": 2,
+          "row": 3
+        },
+        {
+          "reel": 2,
+          "row": 4
+        },
+        {
+          "reel": 3,
+          "row": 4
+        },
+        {
+          "reel": 3,
+          "row": 5
+        },
+        {
+          "reel": 3,
+          "row": 1
+        },
+        {
+          "reel": 3,
+          "row": 2
+        },
+        {
+          "reel": 4,
+          "row": 2
+        },
+        {
+          "reel": 4,
+          "row": 3
+        },
+        {
+          "reel": 5,
+          "row": 3
+        },
+        {
+          "reel": 5,
+          "row": 4
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "type": "kronosBar",
+      "progress": 13,
+      "threshold": 20,
+      "filled": false
+    },
+    {
+      "index": 8,
+      "type": "winInfo",
+      "totalWin": 520,
+      "wins": [
+        {
+          "symbol": "F",
+          "clusterSize": 5,
+          "win": 260,
+          "positions": [
+            {
+              "reel": 1,
+              "row": 2
+            },
+            {
+              "reel": 1,
+              "row": 3
+            },
+            {
+              "reel": 2,
+              "row": 3
+            },
+            {
+              "reel": 2,
+              "row": 4
+            },
+            {
+              "reel": 2,
+              "row": 5
+            }
+          ],
+          "meta": {
+            "globalMult": 26,
+            "clusterMult": 0,
+            "winWithoutMult": 10,
+            "overlay": {
+              "reel": 2,
+              "row": 3
+            }
+          }
+        },
+        {
+          "symbol": "F",
+          "clusterSize": 5,
+          "win": 260,
+          "positions": [
+            {
+              "reel": 4,
+              "row": 3
+            },
+            {
+              "reel": 5,
+              "row": 3
+            },
+            {
+              "reel": 5,
+              "row": 4
+            },
+            {
+              "reel": 6,
+              "row": 4
+            },
+            {
+              "reel": 6,
+              "row": 5
+            }
+          ],
+          "meta": {
+            "globalMult": 26,
+            "clusterMult": 0,
+            "winWithoutMult": 10,
+            "overlay": {
+              "reel": 5,
+              "row": 4
+            }
+          }
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "type": "updateTumbleWin",
+      "amount": 524
+    },
+    {
+      "index": 10,
+      "type": "collectHiddenMults",
+      "collected": [
+        {
+          "reel": 6,
+          "row": 3,
+          "value": 1
+        }
+      ],
+      "globalMult": 27
+    },
+    {
+      "index": 11,
+      "type": "updateGlobalMult",
+      "globalMult": 27
+    },
+    {
+      "index": 12,
+      "type": "tumbleBoard",
+      "newSymbols": [
+        [],
+        [
+          {
+            "name": "G"
+          },
+          {
+            "name": "E"
+          }
+        ],
+        [
+          {
+            "name": "B"
+          },
+          {
+            "name": "D"
+          },
+          {
+            "name": "G"
+          }
+        ],
+        [],
+        [
+          {
+            "name": "B"
+          }
+        ],
+        [
+          {
+            "name": "G"
+          },
+          {
+            "name": "F"
+          }
+        ],
+        [
+          {
+            "name": "D"
+          },
+          {
+            "name": "E"
+          }
+        ]
+      ],
+      "explodingSymbols": [
+        {
+          "reel": 1,
+          "row": 2
+        },
+        {
+          "reel": 1,
+          "row": 3
+        },
+        {
+          "reel": 2,
+          "row": 3
+        },
+        {
+          "reel": 2,
+          "row": 4
+        },
+        {
+          "reel": 2,
+          "row": 5
+        },
+        {
+          "reel": 4,
+          "row": 3
+        },
+        {
+          "reel": 5,
+          "row": 3
+        },
+        {
+          "reel": 5,
+          "row": 4
+        },
+        {
+          "reel": 6,
+          "row": 4
+        },
+        {
+          "reel": 6,
+          "row": 5
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "type": "kronosBar",
+      "progress": 20,
+      "threshold": 20,
+      "filled": true
+    },
+    {
+      "index": 14,
+      "type": "winInfo",
+      "totalWin": 2160,
+      "wins": [
+        {
+          "symbol": "D",
+          "clusterSize": 9,
+          "win": 1620,
+          "positions": [
+            {
+              "reel": 0,
+              "row": 3
+            },
+            {
+              "reel": 0,
+              "row": 4
+            },
+            {
+              "reel": 1,
+              "row": 4
+            },
+            {
+              "reel": 2,
+              "row": 4
+            },
+            {
+              "reel": 2,
+              "row": 5
+            },
+            {
+              "reel": 3,
+              "row": 5
+            },
+            {
+              "reel": 2,
+              "row": 6
+            },
+            {
+              "reel": 1,
+              "row": 6
+            },
+            {
+              "reel": 2,
+              "row": 7
+            }
+          ],
+          "meta": {
+            "globalMult": 27,
+            "clusterMult": 0,
+            "winWithoutMult": 60,
+            "overlay": {
+              "reel": 1,
+              "row": 5
+            }
+          }
+        },
+        {
+          "symbol": "F",
+          "clusterSize": 6,
+          "win": 540,
+          "positions": [
+            {
+              "reel": 4,
+              "row": 1
+            },
+            {
+              "reel": 5,
+              "row": 1
+            },
+            {
+              "reel": 5,
+              "row": 2
+            },
+            {
+              "reel": 6,
+              "row": 2
+            },
+            {
+              "reel": 6,
+              "row": 3
+            },
+            {
+              "reel": 4,
+              "row": 2
+            }
+          ],
+          "meta": {
+            "globalMult": 27,
+            "clusterMult": 0,
+            "winWithoutMult": 20,
+            "overlay": {
+              "reel": 5,
+              "row": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "type": "updateTumbleWin",
+      "amount": 2685
+    },
+    {
+      "index": 16,
+      "type": "collectHiddenMults",
+      "collected": [
+        {
+          "reel": 1,
+          "row": 5,
+          "value": 2
+        },
+        {
+          "reel": 2,
+          "row": 6,
+          "value": 1
+        },
+        {
+          "reel": 4,
+          "row": 0,
+          "value": 3
+        }
+      ],
+      "globalMult": 33
+    },
+    {
+      "index": 17,
+      "type": "updateGlobalMult",
+      "globalMult": 33
+    },
+    {
+      "index": 18,
+      "type": "tumbleBoard",
+      "newSymbols": [
+        [
+          {
+            "name": "B"
+          },
+          {
+            "name": "B"
+          }
+        ],
+        [
+          {
+            "name": "E"
+          },
+          {
+            "name": "E"
+          }
+        ],
+        [
+          {
+            "name": "F"
+          },
+          {
+            "name": "E"
+          },
+          {
+            "name": "E"
+          },
+          {
+            "name": "B"
+          }
+        ],
+        [
+          {
+            "name": "B"
+          }
+        ],
+        [
+          {
+            "name": "E"
+          },
+          {
+            "name": "B"
+          }
+        ],
+        [
+          {
+            "name": "E"
+          },
+          {
+            "name": "E"
+          }
+        ],
+        [
+          {
+            "name": "F"
+          },
+          {
+            "name": "D"
+          }
+        ]
+      ],
+      "explodingSymbols": [
+        {
+          "reel": 0,
+          "row": 3
+        },
+        {
+          "reel": 0,
+          "row": 4
+        },
+        {
+          "reel": 1,
+          "row": 4
+        },
+        {
+          "reel": 1,
+          "row": 6
+        },
+        {
+          "reel": 2,
+          "row": 4
+        },
+        {
+          "reel": 2,
+          "row": 5
+        },
+        {
+          "reel": 2,
+          "row": 6
+        },
+        {
+          "reel": 2,
+          "row": 7
+        },
+        {
+          "reel": 3,
+          "row": 5
+        },
+        {
+          "reel": 4,
+          "row": 1
+        },
+        {
+          "reel": 4,
+          "row": 2
+        },
+        {
+          "reel": 5,
+          "row": 1
+        },
+        {
+          "reel": 5,
+          "row": 2
+        },
+        {
+          "reel": 6,
+          "row": 2
+        },
+        {
+          "reel": 6,
+          "row": 3
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "type": "kronosBar",
+      "progress": 20,
+      "threshold": 20,
+      "filled": true
+    },
+    {
+      "index": 20,
+      "type": "kronosBar",
+      "progress": 0,
+      "threshold": 20,
+      "filled": false
+    },
+    {
+      "index": 21,
+      "type": "kronosTransform",
+      "fromSymbol": "F",
+      "toSymbol": "E",
+      "positions": [
+        {
+          "reel": 1,
+          "row": 6
+        },
+        {
+          "reel": 3,
+          "row": 5
+        },
+        {
+          "reel": 3,
+          "row": 6
+        },
+        {
+          "reel": 5,
+          "row": 6
+        },
+        {
+          "reel": 6,
+          "row": 6
+        }
+      ],
+      "board": [
+        [
+          {
+            "name": "B"
+          },
+          {
+            "name": "B"
+          },
+          {
+            "name": "E"
+          },
+          {
+            "name": "E"
+          },
+          {
+            "name": "G"
+          },
+          {
+            "name": "G"
+          },
+          {
+            "name": "G"
+          },
+          {
+            "name": "G"
+          },
+          {
+            "name": "F"
+          }
+        ],
+        [
+          {
+            "name": "E"
+          },
+          {
+            "name": "E"
+          },
+          {
+            "name": "G"
+          },
+          {
+            "name": "E"
+          },
+          {
+            "name": "E"
+          },
+          {
+            "name": "C"
+          },
+          {
+            "name": "SC",
+            "scatter": true
+          },
+          {
+            "name": "E"
+          },
+          {
+            "name": "F"
+          }
+        ],
+        [
+          {
+            "name": "F"
+          },
+          {
+            "name": "E"
+          },
+          {
+            "name": "E"
+          },
+          {
+            "name": "B"
+          },
+          {
+            "name": "B"
+          },
+          {
+            "name": "D"
+          },
+          {
+            "name": "G"
+          },
+          {
+            "name": "G"
+          },
+          {
+            "name": "D"
+          }
+        ],
+        [
+          {
+            "name": "B"
+          },
+          {
+            "name": "B"
+          },
+          {
+            "name": "C"
+          },
+          {
+            "name": "D"
+          },
+          {
+            "name": "G"
+          },
+          {
+            "name": "G"
+          },
+          {
+            "name": "E"
+          },
+          {
+            "name": "E"
+          },
+          {
+            "name": "C"
+          }
+        ],
+        [
+          {
+            "name": "E"
+          },
+          {
+            "name": "B"
+          },
+          {
+            "name": "B"
+          },
+          {
+            "name": "C"
+          },
+          {
+            "name": "B"
+          },
+          {
+            "name": "G"
+          },
+          {
+            "name": "G"
+          },
+          {
+            "name": "C"
+          },
+          {
+            "name": "B"
+          }
+        ],
+        [
+          {
+            "name": "E"
+          },
+          {
+            "name": "E"
+          },
+          {
+            "name": "G"
+          },
+          {
+            "name": "C"
+          },
+          {
+            "name": "C"
+          },
+          {
+            "name": "E"
+          },
+          {
+            "name": "E"
+          },
+          {
+            "name": "E"
+          },
+          {
+            "name": "E"
+          }
+        ],
+        [
+          {
+            "name": "F"
+          },
+          {
+            "name": "D"
+          },
+          {
+            "name": "D"
+          },
+          {
+            "name": "E"
+          },
+          {
+            "name": "E"
+          },
+          {
+            "name": "SC",
+            "scatter": true
+          },
+          {
+            "name": "G"
+          },
+          {
+            "name": "E"
+          },
+          {
+            "name": "G"
+          }
+        ]
+      ]
+    },
+    {
+      "index": 22,
+      "type": "setWin",
+      "amount": 2685,
+      "winLevel": 6
+    },
+    {
+      "index": 23,
+      "type": "setTotalWin",
+      "amount": 2685
+    },
+    {
+      "index": 24,
+      "type": "finalWin",
+      "amount": 2685
+    }
+  ]
+}

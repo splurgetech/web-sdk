@@ -1,0 +1,347 @@
+{
+  "gameType": "basegame",
+  "events": [
+    {
+      "index": 0,
+      "type": "kronosBar",
+      "progress": 0,
+      "threshold": 20,
+      "filled": false
+    },
+    {
+      "index": 1,
+      "type": "reveal",
+      "board": [
+        [
+          {
+            "name": "F"
+          },
+          {
+            "name": "E"
+          },
+          {
+            "name": "G"
+          },
+          {
+            "name": "G"
+          },
+          {
+            "name": "G"
+          },
+          {
+            "name": "E"
+          },
+          {
+            "name": "G"
+          },
+          {
+            "name": "E"
+          },
+          {
+            "name": "C"
+          }
+        ],
+        [
+          {
+            "name": "B"
+          },
+          {
+            "name": "C"
+          },
+          {
+            "name": "C"
+          },
+          {
+            "name": "F"
+          },
+          {
+            "name": "F"
+          },
+          {
+            "name": "C"
+          },
+          {
+            "name": "C"
+          },
+          {
+            "name": "E"
+          },
+          {
+            "name": "E"
+          }
+        ],
+        [
+          {
+            "name": "B"
+          },
+          {
+            "name": "D"
+          },
+          {
+            "name": "D"
+          },
+          {
+            "name": "B"
+          },
+          {
+            "name": "F"
+          },
+          {
+            "name": "F"
+          },
+          {
+            "name": "E"
+          },
+          {
+            "name": "F"
+          },
+          {
+            "name": "F"
+          }
+        ],
+        [
+          {
+            "name": "E"
+          },
+          {
+            "name": "E"
+          },
+          {
+            "name": "E"
+          },
+          {
+            "name": "C"
+          },
+          {
+            "name": "B"
+          },
+          {
+            "name": "C"
+          },
+          {
+            "name": "C"
+          },
+          {
+            "name": "B"
+          },
+          {
+            "name": "E"
+          }
+        ],
+        [
+          {
+            "name": "D"
+          },
+          {
+            "name": "B"
+          },
+          {
+            "name": "D"
+          },
+          {
+            "name": "F"
+          },
+          {
+            "name": "F"
+          },
+          {
+            "name": "D"
+          },
+          {
+            "name": "F"
+          },
+          {
+            "name": "F"
+          },
+          {
+            "name": "B"
+          }
+        ],
+        [
+          {
+            "name": "C"
+          },
+          {
+            "name": "D"
+          },
+          {
+            "name": "D"
+          },
+          {
+            "name": "C"
+          },
+          {
+            "name": "C"
+          },
+          {
+            "name": "E"
+          },
+          {
+            "name": "E"
+          },
+          {
+            "name": "E"
+          },
+          {
+            "name": "D"
+          }
+        ],
+        [
+          {
+            "name": "D"
+          },
+          {
+            "name": "D"
+          },
+          {
+            "name": "G"
+          },
+          {
+            "name": "G"
+          },
+          {
+            "name": "D"
+          },
+          {
+            "name": "D"
+          },
+          {
+            "name": "B"
+          },
+          {
+            "name": "C"
+          },
+          {
+            "name": "C"
+          }
+        ]
+      ],
+      "paddingPositions": [
+        177,
+        108,
+        121,
+        202,
+        226,
+        22,
+        136
+      ],
+      "gameType": "basegame",
+      "anticipation": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "hiddenMults": [
+        {
+          "reel": 0,
+          "row": 0,
+          "value": 1
+        },
+        {
+          "reel": 0,
+          "row": 1,
+          "value": 3
+        },
+        {
+          "reel": 0,
+          "row": 3,
+          "value": 1
+        },
+        {
+          "reel": 0,
+          "row": 5,
+          "value": 5
+        },
+        {
+          "reel": 1,
+          "row": 2,
+          "value": 4
+        },
+        {
+          "reel": 1,
+          "row": 6,
+          "value": 1
+        },
+        {
+          "reel": 2,
+          "row": 2,
+          "value": 1
+        },
+        {
+          "reel": 2,
+          "row": 4,
+          "value": 2
+        },
+        {
+          "reel": 3,
+          "row": 2,
+          "value": 3
+        },
+        {
+          "reel": 3,
+          "row": 3,
+          "value": 2
+        },
+        {
+          "reel": 3,
+          "row": 4,
+          "value": 3
+        },
+        {
+          "reel": 4,
+          "row": 0,
+          "value": 3
+        },
+        {
+          "reel": 4,
+          "row": 5,
+          "value": 5
+        },
+        {
+          "reel": 4,
+          "row": 6,
+          "value": 2
+        },
+        {
+          "reel": 5,
+          "row": 4,
+          "value": 1
+        },
+        {
+          "reel": 5,
+          "row": 6,
+          "value": 3
+        },
+        {
+          "reel": 6,
+          "row": 1,
+          "value": 1
+        },
+        {
+          "reel": 6,
+          "row": 2,
+          "value": 6
+        },
+        {
+          "reel": 6,
+          "row": 5,
+          "value": 3
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "type": "setTotalWin",
+      "amount": 0
+    },
+    {
+      "index": 3,
+      "type": "finalWin",
+      "amount": 0
+    }
+  ]
+}

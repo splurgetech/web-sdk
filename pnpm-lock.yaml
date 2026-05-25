@@ -24,7 +24,7 @@ importers:
         specifier: 2.4.4
         version: 2.4.4
 
-  apps/clash-kronos-cluster:
+  apps/clash-kronos:
     dependencies:
       '@lingui/core':
         specifier: 5.2.0
