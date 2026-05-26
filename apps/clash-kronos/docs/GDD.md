@@ -9,7 +9,7 @@
 
 ## Hidden multipliers
 
-Each spin, 10–28% of cells receive a hidden value 1×–20× (weighted toward mid/high tiers; 20× is rare). On cluster win, values collect into an additive **global multiplier** (starts at 0; no mult on wins until first collect). Pay at current global, then collect; collections apply on the next evaluation. Collected cells lose hidden mult for the rest of that spin.
+Each spin, 10–50% of cells receive a hidden value 1×–20× (mostly 1×–3×; 20× is very rare). On cluster win, values collect into an additive **global multiplier** (starts at 0; no mult on wins until first collect). Pay at current global, then collect; collections apply on the next evaluation. Collected cells lose hidden mult for the rest of that spin.
 
 ## Global multiplier
 
