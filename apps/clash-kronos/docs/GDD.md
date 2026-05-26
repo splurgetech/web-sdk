@@ -5,11 +5,11 @@
 
 ## Grid
 
-7×7 visible cluster pays (5+ orthogonal). Tumble until no wins.
+6×6 visible cluster pays (5+ orthogonal). Tumble until no wins.
 
 ## Hidden multipliers
 
-Each spin, 20–80% of cells receive a hidden value 1×–10× (weighted low). On cluster win, values collect into an additive **global multiplier** (starts at 0; no mult on wins until first collect). Pay at current global, then collect; collections apply on the next evaluation. Collected cells lose hidden mult for the rest of that spin.
+Each spin, 10–50% of cells receive a hidden value 1×–10× (heavily weighted to 1×–3×). On cluster win, values collect into an additive **global multiplier** (starts at 0; no mult on wins until first collect). Pay at current global, then collect; collections apply on the next evaluation. Collected cells lose hidden mult for the rest of that spin.
 
 ## Global multiplier
 
@@ -18,25 +18,25 @@ Each spin, 20–80% of cells receive a hidden value 1×–10× (weighted low). O
 
 ## Kronos bar
 
-Organic cluster win cells fill the bar (threshold 20). When the cascade is idle and bar ≥ 20: random pay symbol → other pay symbol or **WD** wild; bar resets; wins re-evaluate. Transform-generated wins do not fill the bar.
+Organic cluster win cells fill the bar (threshold 22). When the cascade is idle and bar ≥ 22: random pay symbol → other pay symbol or **W** wild; bar resets; wins re-evaluate. Transform-generated wins do not fill the bar.
 
 ## Symbols
 
-**A–G** pays (3 low / 2 mid / 2 high), **SC** scatter, **WD** wild (Kronos only).
+**H1–H3 / L1–L4** pays (same IDs as cluster sample), **S** scatter, **W** wild (Kronos only).
 
 ## Free spins
 
-| SC | Spins |
+| S | Spins |
 |----|-------|
 | 3 | 8 |
 | 4 | 10 |
 | 5 | 12 |
 
-Max 5 SC on board. Max 3 retriggers per bonus; then `FR0_NS` strips (no SC).
+Max 5 S on board. Max 3 retriggers per bonus; then `FR0_NS` strips (no S).
 
 ## Bonus buy
 
-100× bet; ≥3 SC on entry (3 SC most likely).
+100× bet; ≥3 S on entry (3 S most likely).
 
 ## Targets
 
