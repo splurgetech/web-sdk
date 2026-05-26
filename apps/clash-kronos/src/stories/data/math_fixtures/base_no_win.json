@@ -14,220 +14,172 @@
       "board": [
         [
           {
-            "name": "F"
+            "name": "H1"
           },
           {
-            "name": "E"
+            "name": "H1"
           },
           {
-            "name": "G"
+            "name": "H1"
           },
           {
-            "name": "G"
+            "name": "H3"
           },
           {
-            "name": "G"
+            "name": "H1"
           },
           {
-            "name": "E"
+            "name": "H3"
           },
           {
-            "name": "G"
+            "name": "L2"
           },
           {
-            "name": "E"
-          },
-          {
-            "name": "C"
+            "name": "H2"
           }
         ],
         [
           {
-            "name": "B"
+            "name": "H2"
           },
           {
-            "name": "C"
+            "name": "L2"
           },
           {
-            "name": "C"
+            "name": "L1"
           },
           {
-            "name": "F"
+            "name": "S",
+            "scatter": true
           },
           {
-            "name": "F"
+            "name": "L1"
           },
           {
-            "name": "C"
+            "name": "H2"
           },
           {
-            "name": "C"
+            "name": "H2"
           },
           {
-            "name": "E"
-          },
-          {
-            "name": "E"
+            "name": "L2"
           }
         ],
         [
           {
-            "name": "B"
+            "name": "L3"
           },
           {
-            "name": "D"
+            "name": "L3"
           },
           {
-            "name": "D"
+            "name": "H3"
           },
           {
-            "name": "B"
+            "name": "H2"
           },
           {
-            "name": "F"
+            "name": "H2"
           },
           {
-            "name": "F"
+            "name": "L2"
           },
           {
-            "name": "E"
+            "name": "H2"
           },
           {
-            "name": "F"
-          },
-          {
-            "name": "F"
+            "name": "H2"
           }
         ],
         [
           {
-            "name": "E"
+            "name": "L2"
           },
           {
-            "name": "E"
+            "name": "L2"
           },
           {
-            "name": "E"
+            "name": "H2"
           },
           {
-            "name": "C"
+            "name": "H2"
           },
           {
-            "name": "B"
+            "name": "H1"
           },
           {
-            "name": "C"
+            "name": "H2"
           },
           {
-            "name": "C"
+            "name": "H1"
           },
           {
-            "name": "B"
-          },
-          {
-            "name": "E"
+            "name": "H2"
           }
         ],
         [
           {
-            "name": "D"
+            "name": "H2"
           },
           {
-            "name": "B"
+            "name": "L1"
           },
           {
-            "name": "D"
+            "name": "H3"
           },
           {
-            "name": "F"
+            "name": "L1"
           },
           {
-            "name": "F"
+            "name": "H1"
           },
           {
-            "name": "D"
+            "name": "L1"
           },
           {
-            "name": "F"
+            "name": "L2"
           },
           {
-            "name": "F"
-          },
-          {
-            "name": "B"
+            "name": "H2"
           }
         ],
         [
           {
-            "name": "C"
+            "name": "H3"
           },
           {
-            "name": "D"
+            "name": "L2"
           },
           {
-            "name": "D"
+            "name": "H2"
           },
           {
-            "name": "C"
+            "name": "H2"
           },
           {
-            "name": "C"
+            "name": "H1"
           },
           {
-            "name": "E"
+            "name": "H1"
           },
           {
-            "name": "E"
+            "name": "H3"
           },
           {
-            "name": "E"
-          },
-          {
-            "name": "D"
-          }
-        ],
-        [
-          {
-            "name": "D"
-          },
-          {
-            "name": "D"
-          },
-          {
-            "name": "G"
-          },
-          {
-            "name": "G"
-          },
-          {
-            "name": "D"
-          },
-          {
-            "name": "D"
-          },
-          {
-            "name": "B"
-          },
-          {
-            "name": "C"
-          },
-          {
-            "name": "C"
+            "name": "L1"
           }
         ]
       ],
       "paddingPositions": [
-        177,
-        108,
-        121,
-        202,
-        226,
-        22,
-        136
+        179,
+        193,
+        166,
+        134,
+        240,
+        63
       ],
       "gameType": "basegame",
       "anticipation": [
-        0,
         0,
         0,
         0,
@@ -237,99 +189,39 @@
       ],
       "hiddenMults": [
         {
-          "reel": 0,
-          "row": 0,
-          "value": 1
-        },
-        {
-          "reel": 0,
-          "row": 1,
-          "value": 3
-        },
-        {
-          "reel": 0,
-          "row": 3,
-          "value": 1
-        },
-        {
-          "reel": 0,
-          "row": 5,
-          "value": 5
-        },
-        {
           "reel": 1,
-          "row": 2,
+          "row": 1,
           "value": 4
         },
         {
           "reel": 1,
-          "row": 6,
-          "value": 1
-        },
-        {
-          "reel": 2,
-          "row": 2,
-          "value": 1
+          "row": 4,
+          "value": 3
         },
         {
           "reel": 2,
           "row": 4,
-          "value": 2
-        },
-        {
-          "reel": 3,
-          "row": 2,
           "value": 3
         },
         {
           "reel": 3,
+          "row": 5,
+          "value": 2
+        },
+        {
+          "reel": 4,
+          "row": 2,
+          "value": 1
+        },
+        {
+          "reel": 4,
           "row": 3,
-          "value": 2
-        },
-        {
-          "reel": 3,
-          "row": 4,
-          "value": 3
-        },
-        {
-          "reel": 4,
-          "row": 0,
-          "value": 3
-        },
-        {
-          "reel": 4,
-          "row": 5,
-          "value": 5
-        },
-        {
-          "reel": 4,
-          "row": 6,
-          "value": 2
-        },
-        {
-          "reel": 5,
-          "row": 4,
           "value": 1
         },
         {
           "reel": 5,
-          "row": 6,
-          "value": 3
-        },
-        {
-          "reel": 6,
-          "row": 1,
-          "value": 1
-        },
-        {
-          "reel": 6,
-          "row": 2,
-          "value": 6
-        },
-        {
-          "reel": 6,
           "row": 5,
-          "value": 3
+          "value": 2
         }
       ]
     },
