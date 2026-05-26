@@ -34,9 +34,11 @@ Organic cluster win cells fill the bar (threshold 20). When the cascade is idle 
 
 Max 5 S on board. Max 3 retriggers per bonus; then `FR0_NS` strips (no S).
 
+**Forced entry** (bonus buy + sim `freegame` criteria): scatter count weights **89% / 10% / 1%** for 3 / 4 / 5 S. Organic triggers from reels/tumbles are separate.
+
 ## Bonus buy
 
-100× bet; ≥3 S on entry (3 S most likely).
+100× bet; ≥3 S on entry (almost always exactly 3 S).
 
 ## Targets
 
