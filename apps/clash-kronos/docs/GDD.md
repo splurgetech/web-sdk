@@ -18,7 +18,7 @@ Each spin, 10–50% of cells receive a hidden value 1×–10× (heavily weighted
 
 ## Kronos bar
 
-Organic cluster win cells fill the bar (threshold 22). When the cascade is idle and bar ≥ 22: random pay symbol → other pay symbol or **W** wild; bar resets; wins re-evaluate. Transform-generated wins do not fill the bar.
+Organic cluster win cells fill the bar (threshold 20). When the cascade is idle and bar ≥ 20: random pay symbol → other pay symbol or **W** wild; bar resets; wins re-evaluate. Transform-generated wins do not fill the bar.
 
 ## Symbols
 

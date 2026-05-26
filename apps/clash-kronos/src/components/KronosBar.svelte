@@ -22,7 +22,7 @@
 
 	let show = $state(false);
 	let progress = $state(0);
-	let threshold = $state(22);
+	let threshold = $state(20);
 	let filled = $state(false);
 
 	/** Stable callback — do not use $derived or inline arrows (pixi Graphics $effect loops). */
