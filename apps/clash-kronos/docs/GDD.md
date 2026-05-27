@@ -20,29 +20,31 @@ Each spin, 10–55% of cells receive a hidden value from **1×, 2×, 3×, 4×, 5
 
 Organic cluster win cells fill the bar (threshold 20). When the cascade is idle and bar ≥ 20: random pay symbol → other pay symbol or **W** wild; bar resets; wins re-evaluate. Transform-generated wins do not fill the bar.
 
+**Resets at the start of every spin** (base and each free spin). Progress does not carry between spins; e.g. 5 cells toward the bar on one FS spin does not carry into the next.
+
 ## Symbols
 
 **H1–H3 / L1–L4** pays (same IDs as cluster sample), **S** scatter, **W** wild (Kronos only).
 
 ## Free spins
 
-| S | Spins |
-|----|-------|
-| 3 | 8 |
-| 4 | 10 |
-| 5 | 12 |
+| S | Initial spins | Retrigger (+spins) |
+|----|----------------|-------------------|
+| 3 | 8 | +4 |
+| 4 | 10 | +5 |
+| 5 | 12 | +6 |
 
-Max 5 S on board. Max 3 retriggers per bonus; then `FR0_NS` strips (no S).
+Retrigger awards are 50% of initial. Max 5 S on board. Max 3 retriggers per bonus; then `FR0_NS` strips (no S).
 
 **Forced entry** (bonus buy + sim `freegame` criteria): scatter count weights **89% / 10% / 1%** for 3 / 4 / 5 S. Organic triggers from reels/tumbles are separate.
 
 ## Bonus buy
 
-100× bet; ≥3 S on entry (almost always exactly 3 S).
+100× bet; ≥3 S on entry (almost always exactly 3 S). Same FS rules as organic; **symbol strips** use `FR0_BUY` / `FR0_BUY_NS` (milder than organic `FR0` / `FR0_NS`). Cluster pays use the standard paytable (no extra base-mode multiplier).
 
 ## Targets
 
-RTP 96–97%, wincap 10,000×.
+RTP 96–97%, wincap 10,000×. **Base bet mode** applies `BASE_PAYTABLE_SCALE` (default **1.285×**) to cluster pays; bonus buy does not.
 
 ## Book events
 
