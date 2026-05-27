@@ -40,11 +40,11 @@ Retrigger awards are 50% of initial. Max 5 S on board. Max 3 retriggers per bonu
 
 ## Bonus buy
 
-100× bet; ≥3 S on entry (almost always exactly 3 S). Same FS rules as organic; **symbol strips** use `FR0_BUY` / `FR0_BUY_NS` (milder than organic `FR0` / `FR0_NS`). Cluster pays use the standard paytable (no extra base-mode multiplier).
+100× bet; ≥3 S on entry (almost always exactly 3 S). Same FS rules and **same cluster paytable** as organic; **symbol strips** use `FR0_BUY` / `FR0_BUY_NS` (milder than organic `FR0` / `FR0_NS`).
 
 ## Targets
 
-RTP 96–97%, wincap 10,000×. **Base bet mode** applies `BASE_PAYTABLE_SCALE` (default **1.285×**) to cluster pays; bonus buy does not.
+RTP 96–97%, wincap 10,000×. Cluster pays are identical in base and bonus buy. **Base spins** use `BR0` strips tuned for longer symbol runs (bigger clusters); **buy FS** uses `FR0_BUY` (same pays, different strips).
 
 ## Book events
 
