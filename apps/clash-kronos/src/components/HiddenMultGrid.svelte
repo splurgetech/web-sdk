@@ -17,6 +17,7 @@
 	import BoardContainer from './BoardContainer.svelte';
 	import { getContext } from '../game/context';
 	import { SYMBOL_SIZE } from '../game/constants';
+	import { bookRowToSymbolY } from '../game/utils';
 
 	const context = getContext();
 
@@ -46,7 +47,7 @@
 <BoardContainer>
 	{#if show}
 		{#each cells as cell (cellKey(cell))}
-			<Container x={(cell.reel + 0.5) * SYMBOL_SIZE} y={(cell.row + 0.5) * SYMBOL_SIZE}>
+			<Container x={(cell.reel + 0.5) * SYMBOL_SIZE} y={bookRowToSymbolY(cell.row)}>
 				<SpineProvider key="anticipation" width={SYMBOL_SIZE * 0.19}>
 					<SpineTrack trackIndex={0} animationName={'payframe'} loop />
 				</SpineProvider>

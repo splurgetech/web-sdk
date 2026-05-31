@@ -14,12 +14,15 @@
 </script>
 
 <script lang="ts">
-	import { Container, Text } from 'pixi-svelte';
-	import { StoryPixiApp } from 'components-storybook';
+	import { App, Container, Text } from 'pixi-svelte';
 
 	import Symbol from '../components/Symbol.svelte';
+	import { getContext, setContext } from '../game/context';
 	import { SYMBOL_STATES } from '../game/types';
-	import assets from '../game/assets';
+
+	setContext();
+
+	const context = getContext();
 
 	const BASE = 180;
 
@@ -40,36 +43,44 @@
 
 <Story name="component">
 	{#snippet template(args)}
-		<StoryPixiApp {assets}>
-			<Symbol {...args} oncomplete={() => console.log('complete')} />
-		</StoryPixiApp>
+		<App>
+			{#if context.stateApp.loaded}
+				<Symbol {...args} oncomplete={() => console.log('complete')} />
+			{:else}
+				<Text text="Loading assets..." />
+			{/if}
+		</App>
 	{/snippet}
 </Story>
 
 <Story name="symbols">
 	{#snippet template()}
-		<StoryPixiApp {assets}>
-			<Container scale={0.5}>
-				{#each SYMBOLS_LEFT as symbol, rowIndex}
-					{#each SYMBOL_STATES as state, columnIndex}
-						{@const x = (columnIndex + 1) * BASE}
-						{@const y = (rowIndex + 1) * BASE}
-						<Text {x} y={y - 100} anchor={{ x: 0.5, y: 0 }} text={`${symbol.name}: ${state}`} />
-						<Symbol {x} {y} rawSymbol={symbol} {state} loop />
+		<App>
+			{#if context.stateApp.loaded}
+				<Container scale={0.5}>
+					{#each SYMBOLS_LEFT as symbol, rowIndex}
+						{#each SYMBOL_STATES as state, columnIndex}
+							{@const x = (columnIndex + 1) * BASE}
+							{@const y = (rowIndex + 1) * BASE}
+							<Text {x} y={y - 100} anchor={{ x: 0.5, y: 0 }} text={`${symbol.name}: ${state}`} />
+							<Symbol {x} {y} rawSymbol={symbol} {state} loop />
+						{/each}
 					{/each}
-				{/each}
-			</Container>
+				</Container>
 
-			<Container scale={0.5} x={550}>
-				{#each SYMBOLS_RIGHT as symbol, rowIndex}
-					{#each SYMBOL_STATES as state, columnIndex}
-						{@const x = (columnIndex + 1) * BASE}
-						{@const y = (rowIndex + 1) * BASE}
-						<Text {x} y={y - 100} anchor={{ x: 0.5, y: 0 }} text={`${symbol.name}: ${state}`} />
-						<Symbol {x} {y} rawSymbol={symbol} {state} loop />
+				<Container scale={0.5} x={550}>
+					{#each SYMBOLS_RIGHT as symbol, rowIndex}
+						{#each SYMBOL_STATES as state, columnIndex}
+							{@const x = (columnIndex + 1) * BASE}
+							{@const y = (rowIndex + 1) * BASE}
+							<Text {x} y={y - 100} anchor={{ x: 0.5, y: 0 }} text={`${symbol.name}: ${state}`} />
+							<Symbol {x} {y} rawSymbol={symbol} {state} loop />
+						{/each}
 					{/each}
-				{/each}
-			</Container>
-		</StoryPixiApp>
+				</Container>
+			{:else}
+				<Text text="Loading assets..." />
+			{/if}
+		</App>
 	{/snippet}
 </Story>

@@ -10,205 +10,158 @@ export const REEL_PADDING = 0.53;
 export const INITIAL_BOARD: RawSymbol[][] = [
 	[
 		{
-			name: 'D',
+			name: 'L1',
 		},
 		{
-			name: 'G',
+			name: 'H1',
 		},
 		{
-			name: 'D',
+			name: 'L1',
 		},
 		{
-			name: 'C',
+			name: 'L2',
 		},
 		{
-			name: 'C',
+			name: 'L2',
 		},
 		{
-			name: 'B',
+			name: 'L3',
 		},
 		{
-			name: 'C',
+			name: 'L2',
 		},
 		{
-			name: 'B',
-		},
-		{
-			name: 'F',
+			name: 'L3',
 		},
 	],
 	[
 		{
-			name: 'C',
+			name: 'L2',
 		},
 		{
-			name: 'C',
+			name: 'L2',
 		},
 		{
-			name: 'B',
+			name: 'L3',
 		},
 		{
-			name: 'C',
+			name: 'L2',
 		},
 		{
-			name: 'C',
+			name: 'L2',
 		},
 		{
-			name: 'B',
+			name: 'L3',
 		},
 		{
-			name: 'C',
+			name: 'L2',
 		},
 		{
-			name: 'C',
-		},
-		{
-			name: 'F',
+			name: 'L2',
 		},
 	],
 	[
 		{
-			name: 'B',
+			name: 'L3',
 		},
 		{
-			name: 'F',
+			name: 'H2',
 		},
 		{
-			name: 'D',
+			name: 'L1',
 		},
 		{
-			name: 'D',
+			name: 'L1',
 		},
 		{
-			name: 'E',
+			name: 'H3',
 		},
 		{
-			name: 'C',
+			name: 'L2',
 		},
 		{
-			name: 'E',
+			name: 'H3',
 		},
 		{
-			name: 'E',
-		},
-		{
-			name: 'F',
+			name: 'H3',
 		},
 	],
 	[
 		{
-			name: 'E',
+			name: 'H3',
 		},
 		{
-			name: 'D',
+			name: 'L1',
 		},
 		{
-			name: 'F',
+			name: 'H2',
 		},
 		{
-			name: 'F',
+			name: 'H2',
 		},
 		{
-			name: 'E',
+			name: 'H3',
 		},
 		{
-			name: 'F',
+			name: 'H2',
 		},
 		{
-			name: 'F',
+			name: 'H2',
 		},
 		{
-			name: 'B',
-		},
-		{
-			name: 'B',
+			name: 'L3',
 		},
 	],
 	[
 		{
-			name: 'D',
+			name: 'L1',
 		},
 		{
-			name: 'D',
+			name: 'L1',
 		},
 		{
-			name: 'F',
+			name: 'H2',
 		},
 		{
-			name: 'G',
+			name: 'H1',
 		},
 		{
-			name: 'G',
+			name: 'H1',
 		},
 		{
-			name: 'C',
+			name: 'L2',
 		},
 		{
-			name: 'C',
+			name: 'L2',
 		},
 		{
-			name: 'B',
-		},
-		{
-			name: 'B',
+			name: 'L3',
 		},
 	],
 	[
 		{
-			name: 'D',
+			name: 'L1',
 		},
 		{
-			name: 'C',
+			name: 'L2',
 		},
 		{
-			name: 'C',
+			name: 'L2',
 		},
 		{
-			name: 'G',
+			name: 'H1',
 		},
 		{
-			name: 'E',
+			name: 'H3',
 		},
 		{
-			name: 'E',
+			name: 'H3',
 		},
 		{
-			name: 'F',
+			name: 'H2',
 		},
 		{
-			name: 'F',
-		},
-		{
-			name: 'F',
-		},
-	],
-	[
-		{
-			name: 'B',
-		},
-		{
-			name: 'B',
-		},
-		{
-			name: 'B',
-		},
-		{
-			name: 'F',
-		},
-		{
-			name: 'G',
-		},
-		{
-			name: 'B',
-		},
-		{
-			name: 'F',
-		},
-		{
-			name: 'F',
-		},
-		{
-			name: 'F',
+			name: 'H2',
 		},
 	],
 ];
@@ -219,6 +172,9 @@ export const BOARD_SIZES = {
 	width: SYMBOL_SIZE * BOARD_DIMENSIONS.x,
 	height: SYMBOL_SIZE * BOARD_DIMENSIONS.y,
 };
+
+/** Move board up so the bottom row clears the bet/win UI bar. */
+export const BOARD_LAYOUT_Y_OFFSET = SYMBOL_SIZE * 0.9;
 
 export const BACKGROUND_RATIO = 2039 / 1000;
 export const PORTRAIT_BACKGROUND_RATIO = 1242 / 2208;
@@ -324,7 +280,7 @@ const wSizeRatios = { width: 1.5 * 0.9, height: SPECIAL_SYMBOL_SIZE * 1.15 };
 const sSizeRatios = { width: 2.5, height: SPECIAL_SYMBOL_SIZE * 2.3 };
 
 export const SYMBOL_INFO_MAP = {
-	G: {
+	H1: {
 		explosion,
 		win: {
 			type: 'spine',
@@ -337,7 +293,7 @@ export const SYMBOL_INFO_MAP = {
 		spin: h1Static,
 		land: h1Static,
 	},
-	F: {
+	H2: {
 		explosion,
 		win: {
 			type: 'spine',
@@ -350,7 +306,7 @@ export const SYMBOL_INFO_MAP = {
 		spin: h2Static,
 		land: h2Static,
 	},
-	F: {
+	H3: {
 		explosion,
 		win: {
 			type: 'spine',
@@ -363,7 +319,7 @@ export const SYMBOL_INFO_MAP = {
 		spin: h3Static,
 		land: h3Static,
 	},
-	E: {
+	H4: {
 		explosion,
 		win: {
 			type: 'spine',
@@ -389,7 +345,7 @@ export const SYMBOL_INFO_MAP = {
 		spin: h5Static,
 		land: h5Static,
 	},
-	D: {
+	L1: {
 		explosion,
 		win: {
 			type: 'spine',
@@ -402,7 +358,7 @@ export const SYMBOL_INFO_MAP = {
 		spin: l1Static,
 		land: l1Static,
 	},
-	C: {
+	L2: {
 		explosion,
 		win: {
 			type: 'spine',
@@ -415,7 +371,7 @@ export const SYMBOL_INFO_MAP = {
 		spin: l2Static,
 		land: l2Static,
 	},
-	B: {
+	L3: {
 		explosion,
 		win: {
 			type: 'spine',
@@ -428,7 +384,7 @@ export const SYMBOL_INFO_MAP = {
 		spin: l3Static,
 		land: l3Static,
 	},
-	A: {
+	L4: {
 		explosion,
 		win: {
 			type: 'spine',
@@ -441,7 +397,7 @@ export const SYMBOL_INFO_MAP = {
 		spin: l4Static,
 		land: l4Static,
 	},
-	WD: {
+	W: {
 		explosion,
 		postWinStatic: {
 			type: 'sprite',
@@ -458,7 +414,7 @@ export const SYMBOL_INFO_MAP = {
 			sizeRatios: wSizeRatios,
 		},
 	},
-	SC: {
+	S: {
 		explosion,
 		postWinStatic: sStatic,
 		static: sStatic,

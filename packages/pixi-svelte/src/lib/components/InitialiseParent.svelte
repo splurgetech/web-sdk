@@ -1,4 +1,5 @@
 <script lang="ts">
+	import * as PIXI from 'pixi.js';
 	import type { Snippet } from 'svelte';
 
 	import { createContextParent, getContextApp } from '../context.svelte';

@@ -126,16 +126,6 @@
 />
 
 <Story
-	name="updateGrid"
-	args={templateArgs({
-		skipLoadingScreen: true,
-		data: events.updateGrid,
-		action: async (data) => await playBookEvent(data, { bookEvents: [] }),
-	})}
-	{template}
-/>
-
-<Story
 	name="setWin"
 	args={templateArgs({
 		skipLoadingScreen: true,

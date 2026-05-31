@@ -20,6 +20,7 @@
 	import BoardContainer from './BoardContainer.svelte';
 	import { getContext } from '../game/context';
 	import { SYMBOL_SIZE } from '../game/constants';
+	import { bookRowToSymbolY } from '../game/utils';
 
 	const context = getContext();
 	const PULSE_MS = 500;
@@ -29,7 +30,7 @@
 
 	const cellCenter = (pos: Position) => ({
 		x: (pos.reel + 0.5) * SYMBOL_SIZE,
-		y: (pos.row + 0.5) * SYMBOL_SIZE,
+		y: bookRowToSymbolY(pos.row),
 	});
 
 	function drawPulse(g: PIXI.Graphics) {

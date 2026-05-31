@@ -84,7 +84,9 @@
 		tumbleBoardExplode: async ({ explodingPositions }) => {
 			const getPromises = () =>
 				explodingPositions.map(async (position) => {
-					const tumbleSymbol = context.stateGame.tumbleBoardBase[position.reel][position.row];
+					const tumbleSymbol =
+						context.stateGame.tumbleBoardBase[position.reel][position.row];
+					if (!tumbleSymbol) return;
 					tumbleSymbol.symbolState = 'explosion';
 					await waitForResolve((resolve) => (tumbleSymbol.oncomplete = resolve));
 				});
@@ -113,14 +115,20 @@
 								});
 
 								if (symbolIndex > 0 && symbolIndex < tumbleReel.length - 1) {
-									tumbleSymbol.symbolState = 'land';
-									context.stateGameDerived.onSymbolLand({ rawSymbol: tumbleSymbol.rawSymbol });
-									await waitForResolve((resolve) => {
-										tumbleSymbol.oncomplete = () => {
-											tumbleSymbol.symbolState = 'static';
-											resolve();
-										};
-									});
+									if (tumbleSymbol.rawSymbol.name === 'W') {
+										tumbleSymbol.symbolState = 'static';
+									} else {
+										tumbleSymbol.symbolState = 'land';
+										context.stateGameDerived.onSymbolLand({
+											rawSymbol: tumbleSymbol.rawSymbol,
+										});
+										await waitForResolve((resolve) => {
+											tumbleSymbol.oncomplete = () => {
+												tumbleSymbol.symbolState = 'static';
+												resolve();
+											};
+										});
+									}
 								}
 							}
 						});

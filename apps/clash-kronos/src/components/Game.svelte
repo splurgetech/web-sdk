@@ -36,7 +36,12 @@
 
 	const context = getContext();
 
-	onMount(() => (context.stateLayout.showLoadingScreen = true));
+	// Only gate on the loading screen before assets are ready (Storybook clears it via StoryGameTemplate).
+	onMount(() => {
+		if (!context.stateApp.loaded) {
+			context.stateLayout.showLoadingScreen = true;
+		}
+	});
 
 	context.eventEmitter.subscribeOnMount({
 		buyBonusConfirm: () => {

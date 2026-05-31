@@ -4,7 +4,7 @@
 		mult: number;
 		result: number;
 		reel: number; // 0 | 1 | 2 | 3 | 4 | 5;
-		row: number; // 1 | 2 | 3 | 4 | 5; // excluding the off top row and the off bottom row
+		row: number; // Padded board row index (1..visible); excludes top/bottom padding rows
 	};
 	export type Win = RawWin & { oncomplete: () => void };
 </script>

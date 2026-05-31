@@ -7,7 +7,9 @@ const config: StorybookConfig = {
 		name: '@storybook/sveltekit',
 		options: {},
 	},
-	staticDirs: ['../static'],
+	// Vite resolves apps/<game>/assets (symlink → static/assets) as /static/assets URLs.
+	// Mount static twice: at / (SvelteKit-style) and /static (Vite symlink canonical path).
+	staticDirs: ['../static', { from: '../static', to: '/static' }],
 };
 
 export default config;

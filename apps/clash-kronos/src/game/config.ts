@@ -7,7 +7,7 @@ const tier = (pays: number[]) => {
 		table.push({ [String(sizes[i])]: pays[i] });
 	}
 	table.push({ '11': pays[6] });
-	for (let n = 12; n <= 49; n++) table[table.length - 1][String(n)] = pays[6];
+	for (let n = 12; n <= 36; n++) table[table.length - 1][String(n)] = pays[6];
 	return table;
 };
 
@@ -16,8 +16,8 @@ export default {
 	gameName: 'clash_kronos',
 	gameID: '0_0_clash_kronos',
 	rtp: 0.965,
-	numReels: 7,
-	numRows: [7, 7, 7, 7, 7, 7, 7],
+	numReels: 6,
+	numRows: [6, 6, 6, 6, 6, 6],
 	betModes: {
 		base: {
 			cost: 1.0,
@@ -35,15 +35,15 @@ export default {
 		},
 	},
 	symbols: {
-		WD: { paytable: null, special_properties: ['wild'] },
-		SC: { paytable: null, special_properties: ['scatter'] },
-		A: { paytable: tier([0.01, 0.015, 0.03, 0.05, 0.08, 0.1, 0.15]) },
-		B: { paytable: tier([0.01, 0.015, 0.03, 0.05, 0.08, 0.1, 0.15]) },
-		C: { paytable: tier([0.01, 0.015, 0.03, 0.05, 0.08, 0.1, 0.15]) },
-		D: { paytable: tier([0.05, 0.1, 0.2, 0.4, 0.6, 1.0, 1.5]) },
-		E: { paytable: tier([0.1, 0.2, 0.4, 0.8, 1.5, 3.0, 5.0]) },
-		F: { paytable: tier([0.1, 0.2, 0.4, 0.8, 1.5, 3.0, 5.0]) },
-		G: { paytable: tier([0.2, 0.4, 0.8, 1.5, 3.0, 6.0, 10.0]) },
+		W: { paytable: null, special_properties: ['wild'] },
+		S: { paytable: null, special_properties: ['scatter'] },
+		L4: { paytable: tier([0.01, 0.015, 0.03, 0.05, 0.08, 0.1, 0.15]) },
+		L3: { paytable: tier([0.01, 0.015, 0.03, 0.05, 0.08, 0.1, 0.15]) },
+		L2: { paytable: tier([0.01, 0.015, 0.03, 0.05, 0.08, 0.1, 0.15]) },
+		L1: { paytable: tier([0.05, 0.1, 0.2, 0.4, 0.6, 1.0, 1.5]) },
+		H3: { paytable: tier([0.1, 0.2, 0.4, 0.8, 1.5, 3.0, 5.0]) },
+		H2: { paytable: tier([0.1, 0.2, 0.4, 0.8, 1.5, 3.0, 5.0]) },
+		H1: { paytable: tier([0.2, 0.4, 0.8, 1.5, 3.0, 6.0, 10.0]) },
 	},
 	paddingReels: {
 		basegame: '',

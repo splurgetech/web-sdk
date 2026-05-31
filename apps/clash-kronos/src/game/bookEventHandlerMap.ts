@@ -49,6 +49,7 @@ const clusterWinAmount = (win: BookEventOfType<'winInfo'>['wins'][number]) => {
 		mult: gm,
 		result: gm > 0 ? base * gm : base,
 		reel: win.meta.overlay.reel,
+		// Win overlay rows are padded board indices (same as cluster).
 		row: win.meta.overlay.row,
 	};
 };

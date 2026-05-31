@@ -52,6 +52,9 @@ export const convertTorResumableBet = (betToResume: Bet) => {
 export const getSymbolX = (reelIndex: number) => SYMBOL_SIZE * (reelIndex + REEL_PADDING);
 export const getSymbolY = (symbolIndexOfBoard: number) => (symbolIndexOfBoard + 0.5) * SYMBOL_SIZE;
 
+/** Book event positions use padded board row indices (see math win_info_event). */
+export const bookRowToSymbolY = (paddedRow: number) => (paddedRow - 0.5) * SYMBOL_SIZE;
+
 export const getSymbolKey = ({ rawSymbol }: { rawSymbol: RawSymbol }) => {
 	if (rawSymbol.multiplier !== undefined) {
 		return `${rawSymbol.name}_${rawSymbol.multiplier}` as keyof typeof SYMBOL_INFO_MAP;
@@ -67,5 +70,11 @@ export const getSymbolInfo = ({
 	state: SymbolState;
 }) => {
 	const symbolKey = getSymbolKey({ rawSymbol });
-	return SYMBOL_INFO_MAP[symbolKey][state];
+	const entry = SYMBOL_INFO_MAP[symbolKey];
+	if (!entry?.[state]) {
+		throw new Error(
+			`Missing symbol asset for "${symbolKey}" state "${state}". Check SYMBOL_INFO_MAP matches story/fixture symbol names.`,
+		);
+	}
+	return entry[state];
 };

@@ -6,6 +6,7 @@
 	"scripts": {
 		"format": "prettier --write --ignore-path=../../.prettierignore .",
 		"lint": "eslint \"src\"",
+		"prestorybook": "node ../../scripts/prepare-app-assets.mjs",
 		"storybook": "PUBLIC_CHROMATIC=true storybook dev -p 6008 public",
 		"dev": "vite dev --host --port 3008",
 		"build": "vite build",
