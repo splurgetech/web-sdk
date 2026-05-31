@@ -32,11 +32,13 @@ All app packages use the same default ports (6001 Storybook, 3001 dev) except `c
 
 Node 22.16.0, pnpm 10.5.0 required.
 
+`pnpm install` runs `scripts/prepare-app-assets.mjs`, which symlinks `apps/<game>/assets` → `static/assets` so `src/game/assets.ts` imports resolve (same as cluster, scatter, ways, etc.).
+
 ## Repository structure
 
 ```
 apps/           # Game apps — each is a self-contained SvelteKit + Storybook app
-  clash-kronos/           # Clash of Kronos (7×7, hidden mults, Kronos bar)
+  clash-kronos/           # Clash of Kronos (6×6, hidden mults, Kronos bar)
   cluster/                # Reference cluster sample (7×7, wild multiplier)
   lines/                  # Reference lines sample
   ...
@@ -108,7 +110,7 @@ Every story file calls `setContext()` before rendering `<Game />`.
 
 Active game. Canonical design: `apps/clash-kronos/docs/GDD.md`. Math: `math-sdk/games/0_0_clash_kronos`.
 
-- **7×7 grid** — symbols `A`–`G`, `SC`, `WD` (wild from Kronos transform only).
+- **6×6 grid** — symbols `H1`–`H3`, `L1`–`L4`, `S`, `W` (same IDs as cluster; wild from Kronos transform only).
 - **Hidden cell multipliers** — `reveal.hiddenMults`; collect via `collectHiddenMults` into additive global mult.
 - **Book events**: `kronosBar`, `kronosTransform`, `collectHiddenMults`, `updateGlobalMult` (no `updateGrid` / lightning / bomb).
 - **Free spins**: global mult starts at 0 in bonus and accumulates across FS spins.

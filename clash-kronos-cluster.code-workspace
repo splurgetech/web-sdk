@@ -9,5 +9,8 @@
 			"name": "math-sdk"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"npm.packageManager": "pnpm",
+		"npm.autoDetect": "off"
+	}
 }

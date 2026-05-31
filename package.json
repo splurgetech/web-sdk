@@ -2,8 +2,10 @@
   "name": "twist-turbo",
   "version": "0.0.0",
   "private": true,
-	"license": "MIT",
+  "license": "MIT",
   "scripts": {
+    "prepare:assets": "node scripts/prepare-app-assets.mjs",
+    "postinstall": "node scripts/prepare-app-assets.mjs",
     "lint": "turbo run lint",
     "format": "turbo run format",
     "dev": "turbo run dev",

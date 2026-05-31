@@ -50,5 +50,7 @@
 		"xstate"
 	],
 	"workbench.editor.empty.hint": "hidden",
-	"scm.showHistoryGraph": false
+	"scm.showHistoryGraph": false,
+	"npm.packageManager": "pnpm",
+	"npm.autoDetect": "off"
 }
