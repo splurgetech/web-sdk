@@ -258,6 +258,7 @@ const l1Static = { type: 'sprite', assetKey: 'l1.webp', sizeRatios: { width: 1, 
 const l2Static = { type: 'sprite', assetKey: 'l2.webp', sizeRatios: { width: 1, height: 1 } };
 const l3Static = { type: 'sprite', assetKey: 'l3.webp', sizeRatios: { width: 1, height: 1 } };
 const l4Static = { type: 'sprite', assetKey: 'l4.webp', sizeRatios: { width: 1, height: 1 } };
+const l5Static = { type: 'sprite', assetKey: 'l4.webp', sizeRatios: { width: 1, height: 1 } };
 
 const sStatic = { type: 'sprite', assetKey: 's.png', sizeRatios: { width: 1.243, height: 1.243 } };
 const wStatic = { type: 'sprite', assetKey: 'w.png', sizeRatios: { width: 1.12, height: 1.12 } };
@@ -396,6 +397,19 @@ export const SYMBOL_INFO_MAP = {
 		static: l4Static,
 		spin: l4Static,
 		land: l4Static,
+	},
+	L5: {
+		explosion,
+		win: {
+			type: 'spine',
+			assetKey: 'L5',
+			animationName: 'l4',
+			sizeRatios: { width: 0.5 * 0.75, height: LOW_SYMBOL_SIZE * 0.63 },
+		},
+		postWinStatic: l5Static,
+		static: l5Static,
+		spin: l5Static,
+		land: l5Static,
 	},
 	W: {
 		explosion,

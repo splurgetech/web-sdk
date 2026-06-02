@@ -85,6 +85,14 @@ export default {
 			scale: 2,
 		},
 	},
+	L5: {
+		type: 'spine',
+		src: {
+			atlas: new URL('../../assets/spines/symbols/symbols.atlas', import.meta.url).href,
+			skeleton: new URL('../../assets/spines/symbols/l4.json', import.meta.url).href,
+			scale: 2,
+		},
+	},
 	M: {
 		type: 'spine',
 		src: {

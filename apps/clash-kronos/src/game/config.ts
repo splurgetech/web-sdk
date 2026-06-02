@@ -37,6 +37,7 @@ export default {
 	symbols: {
 		W: { paytable: null, special_properties: ['wild'] },
 		S: { paytable: null, special_properties: ['scatter'] },
+		L5: { paytable: tier([0.01, 0.015, 0.03, 0.05, 0.08, 0.1, 0.15]) },
 		L4: { paytable: tier([0.01, 0.015, 0.03, 0.05, 0.08, 0.1, 0.15]) },
 		L3: { paytable: tier([0.01, 0.015, 0.03, 0.05, 0.08, 0.1, 0.15]) },
 		L2: { paytable: tier([0.01, 0.015, 0.03, 0.05, 0.08, 0.1, 0.15]) },
